@@ -1,5 +1,20 @@
 # AWS CI Account Setup
 
+[![Build Status](https://github.com/exasol/ci-isolation-aws/actions/workflows/ci-build.yml/badge.svg)](https://github.com/exasol/ci-isolation-aws/actions/workflows/ci-build.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/com.exasol/ci-isolation-aws)](https://search.maven.org/artifact/com.exasol/ci-isolation-aws)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aci-isolation-aws&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.exasol%3Aci-isolation-aws)
+
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aci-isolation-aws&metric=security_rating)](https://sonarcloud.io/dashboard?id=com.exasol%3Aci-isolation-aws)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aci-isolation-aws&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=com.exasol%3Aci-isolation-aws)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aci-isolation-aws&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=com.exasol%3Aci-isolation-aws)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aci-isolation-aws&metric=sqale_index)](https://sonarcloud.io/dashboard?id=com.exasol%3Aci-isolation-aws)
+
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aci-isolation-aws&metric=code_smells)](https://sonarcloud.io/dashboard?id=com.exasol%3Aci-isolation-aws)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aci-isolation-aws&metric=coverage)](https://sonarcloud.io/dashboard?id=com.exasol%3Aci-isolation-aws)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aci-isolation-aws&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=com.exasol%3Aci-isolation-aws)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aci-isolation-aws&metric=ncloc)](https://sonarcloud.io/dashboard?id=com.exasol%3Aci-isolation-aws)
+
 This repository contains a setup for provisioning an AWS sub-account for CI testing.
 
 [Features](doc/features.md)
@@ -87,3 +102,8 @@ profile: <the aws-profile for the admin user>
 ```
 
 Before running the tests, deploy the stack using the CDK.
+
+## Additional Information
+
+* [Dependencies](dependencies.md)
+* [Changelog](doc/changes/changelog.md)
