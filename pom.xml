@@ -160,6 +160,10 @@
                     <modules>
                         <module>maven_central</module>
                     </modules>
+                    <linkReplacements>
+                        <linkReplacement>https://github.com/google/gson/gson|https://github.com/google/gson
+                        </linkReplacement>
+                    </linkReplacements>
                 </configuration>
             </plugin>
             <plugin>

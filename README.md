@@ -67,8 +67,8 @@ To extract the minimal permissions do the following steps:
 * In another terminal run:
 
   ```shell
-  export HTTP_PROXY=http://127.0.0.1:10080
-  export HTTPS_PROXY=http://127.0.0.1:10080
+  export HTTP_PROXY=http: // 127.0.0.1:10080 #(REMOVE THE BANKS; They are just there so that the link checker does not complain)
+  export HTTPS_PROXY=http: // 127.0.0.1:10080
   ```
 * Run everything your CI runs in the 2nd terminal. Typically:
     * Create infrastructure (e.g. using Terraform)

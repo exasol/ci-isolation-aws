@@ -3,7 +3,6 @@ target
 .classpath
 .project
 .idea
-.settings
 .vscode
 *.iml
 
@@ -11,4 +10,23 @@ target
 .cdk.staging
 cdk.out
 test_config.yaml
+/target/
+pom.xml.versionsBackup
+setEnv.sh
+
+# .settings : we need Eclipse settings for code formatter and clean-up rules
+.cache
+dependency-reduced-pom.xml
+
+
+# Others
+.DS_Store
+*.swp
+local
+Scripts
+.dbeaver*
+**/*.log
+.directory
+venv/
+.tmp/
 
