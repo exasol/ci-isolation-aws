@@ -164,6 +164,10 @@
                         <linkReplacement>https://github.com/google/gson/gson|https://github.com/google/gson
                         </linkReplacement>
                     </linkReplacements>
+                    <excludedFiles>
+                        <!-- Excluded since version 9.0.0 did not contain GitHub token -->
+                        <excludedFile>.github/workflows/broken_links_checker.yml</excludedFile>
+                    </excludedFiles>
                 </configuration>
             </plugin>
             <plugin>
