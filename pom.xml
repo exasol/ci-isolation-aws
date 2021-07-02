@@ -31,6 +31,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cdk.version>1.106.0</cdk.version>
         <junit.version>5.8.0-M1</junit.version>
+        <gpg.skip>true</gpg.skip>
     </properties>
     <dependencyManagement>
         <dependencies>
