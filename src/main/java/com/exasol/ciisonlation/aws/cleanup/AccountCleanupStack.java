@@ -31,9 +31,7 @@ public class AccountCleanupStack extends TaggedStack {
         super(scope, CLEANUP_STACK_NAME, null, "ci-account-cleanup");
         final Role cleanupRole = new Role(this, AWS_ACCOUNT_CLEANUP_ROLE, RoleProps.builder()
                 .roleName(AWS_ACCOUNT_CLEANUP_ROLE).assumedBy(new ServicePrincipal("codebuild.amazonaws.com")).build());
-
         addCleanupPolicy(cleanupRole);
-
         tagResource(cleanupRole);
         cleanupRole.addManagedPolicy(createDenyChangeProtectedResourcePolicy());
         final BuildSpec buildSpec = new AwsAccountCleanerBuildSpec(this.getAccount());

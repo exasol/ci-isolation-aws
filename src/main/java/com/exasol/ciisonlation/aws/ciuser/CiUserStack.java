@@ -13,7 +13,7 @@ import software.amazon.awscdk.core.Construct;
 import software.amazon.awscdk.services.iam.*;
 
 /**
- * This class defines an cloud formation stack with an users for CI testing. Typically this stack is used from a project
+ * This class defines a cloudformation stack with a user for CI testing. Typically this stack is used from a project
  * specific CI CDK setup.
  */
 public class CiUserStack extends TaggedStack {

@@ -21,7 +21,7 @@ import software.amazon.awssdk.services.iam.model.*;
 import software.amazon.awssdk.services.sts.StsClient;
 
 /**
- * This tests verify that the ci-user can not more than we expect.
+ * This tests verify that the ci-user can not run actions more than allowed.
  * <p>
  * For running this test you need an admin user. For that reason we do not run this test in CI.
  * </p>

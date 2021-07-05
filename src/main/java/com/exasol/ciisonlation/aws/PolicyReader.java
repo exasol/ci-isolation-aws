@@ -3,7 +3,7 @@ package com.exasol.ciisonlation.aws;
 import software.amazon.awscdk.services.iam.PolicyDocument;
 
 /**
- * This class reads a policy document from a JSON file from the resources.
+ * This class reads a policy document from a JSON file located in the resources.
  * <p>
  * For information on how to generate these files check the README.md.
  * </p>

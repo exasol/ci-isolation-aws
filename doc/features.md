@@ -21,7 +21,7 @@ Needs: dsn
 
 `feat~damage-minimization-on-hacking-attacks~1`
 
-The AWS CI Account Setup implements measurements to reduce the damage (costs, abuse) in case an attacker gains access to the CI account.
+The AWS CI Account setup implements measurements to reduce the damage (costs, abuse) in case an attacker gains access to the CI account.
 
 Rationale:
 Since the credentials are exposed to the CI there is an increased risk that an attacker could gain access to them. For that case the damage should be as small as possible.
@@ -37,4 +37,3 @@ The AWS CI Account Setup handles resources that were created but not deleted by 
 Rationale:
 
 Usually each CI build should delete the resources it created. It can, however, happen that the cleanup fails, for example since the CI server crashes. The remaining resources can then generate high costs.
-
