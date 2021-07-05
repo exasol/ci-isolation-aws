@@ -1,6 +1,6 @@
-package com.exasol.ciisonlation.aws;
+package com.exasol.ciisolation.aws;
 
-import com.exasol.ciisonlation.aws.cleanup.AccountCleanupStack;
+import com.exasol.ciisolation.aws.cleanup.AccountCleanupStack;
 
 import software.amazon.awscdk.core.App;
 

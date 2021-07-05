@@ -1,4 +1,4 @@
-package com.exasol.ciisonlation.aws.ciuser;
+package com.exasol.ciisolation.aws.ciuser;
 
 import java.util.*;
 import java.util.stream.Collectors;

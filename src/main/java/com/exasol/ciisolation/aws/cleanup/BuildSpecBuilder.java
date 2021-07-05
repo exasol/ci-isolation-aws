@@ -1,4 +1,4 @@
-package com.exasol.ciisonlation.aws.cleanup;
+package com.exasol.ciisolation.aws.cleanup;
 
 import java.io.StringWriter;
 import java.util.*;
@@ -10,8 +10,16 @@ import org.yaml.snakeyaml.Yaml;
  * This class is a String-Builder for AWS CodeBuild build specs.
  */
 class BuildSpecBuilder {
-    private final List<String> installSteps = new ArrayList<>();
-    private final List<String> buildSteps = new ArrayList<>();
+    private final List<String> installSteps;
+    private final List<String> buildSteps;
+
+    /**
+     * Create a new instance of {@link BuildSpecBuilder}.
+     */
+    BuildSpecBuilder() {
+        this.installSteps = new ArrayList<>();
+        this.buildSteps = new ArrayList<>();
+    }
 
     /**
      * Add installation steps.

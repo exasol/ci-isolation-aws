@@ -1,4 +1,4 @@
-package com.exasol.ciisonlation.aws;
+package com.exasol.ciisolation.aws;
 
 public class TestConfiguration {
     private final String awsProfile;

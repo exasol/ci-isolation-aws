@@ -1,4 +1,4 @@
-package com.exasol.ciisonlation.aws.cleanup;
+package com.exasol.ciisolation.aws.cleanup;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -22,15 +22,19 @@ class AwsAccountCleanerBuildSpec extends BuildSpec {
     AwsAccountCleanerBuildSpec(final String accountId) {
         this.accountId = accountId;
         this.buildSpec = new BuildSpecBuilder()//
-                .addInstallSteps(//
-                        getWriteToFileCommand(getAwsNukeConfig(), AWS_NUKE_CONFIG), //
-                        "cat aws-nuke-config.yml", //
-                        "wget -q https://github.com/rebuy-de/aws-nuke/releases/download/v2.15.0/aws-nuke-v2.15.0-linux-amd64.tar.gz -O aws-nuke.tar.gz", //
-                        "tar -xvzf aws-nuke.tar.gz", //
-                        "mv aws-nuke-v2.15.0-linux-amd64 /bin/aws-nuke", //
-                        "chmod +x /bin/aws-nuke")
+                .addInstallSteps(getInstallSteps())
                 .addInstallSteps("aws-nuke --config " + AWS_NUKE_CONFIG + " --force --force-sleep 3 --no-dry-run")//
                 .build();
+    }
+
+    @NotNull
+    private String[] getInstallSteps() {
+        return new String[] { getWriteToFileCommand(getAwsNukeConfig(), AWS_NUKE_CONFIG), //
+                "cat aws-nuke-config.yml", //
+                "wget -q https://github.com/rebuy-de/aws-nuke/releases/download/v2.15.0/aws-nuke-v2.15.0-linux-amd64.tar.gz -O aws-nuke.tar.gz", //
+                "tar -xvzf aws-nuke.tar.gz", //
+                "mv aws-nuke-v2.15.0-linux-amd64 /bin/aws-nuke", //
+                "chmod +x /bin/aws-nuke" };
     }
 
     private String getWriteToFileCommand(final String content, final String fileName) {

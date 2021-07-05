@@ -1,4 +1,4 @@
-package com.exasol.ciisonlation.aws.cleanup;
+package com.exasol.ciisolation.aws.cleanup;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;

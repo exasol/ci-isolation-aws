@@ -1,6 +1,6 @@
-package com.exasol.ciisonlation.aws;
+package com.exasol.ciisolation.aws;
 
-import static com.exasol.ciisonlation.aws.cleanup.AccountCleanupStack.AWS_ACCOUNT_CLEANUP_RUNNER;
+import static com.exasol.ciisolation.aws.cleanup.AccountCleanupStack.AWS_ACCOUNT_CLEANUP_RUNNER;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.*;
 
-import com.exasol.ciisonlation.aws.ciuser.CiUserStack;
+import com.exasol.ciisolation.aws.ciuser.CiUserStack;
 
 import software.amazon.awscdk.core.App;
 import software.amazon.awssdk.auth.credentials.*;

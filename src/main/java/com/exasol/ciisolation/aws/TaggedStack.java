@@ -1,4 +1,4 @@
-package com.exasol.ciisonlation.aws;
+package com.exasol.ciisolation.aws;
 
 import software.amazon.awscdk.core.*;
 

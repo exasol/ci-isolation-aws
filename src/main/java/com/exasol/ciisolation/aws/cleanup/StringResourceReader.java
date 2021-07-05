@@ -1,4 +1,4 @@
-package com.exasol.ciisonlation.aws.cleanup;
+package com.exasol.ciisolation.aws.cleanup;
 
 import java.io.IOException;
 import java.util.Objects;

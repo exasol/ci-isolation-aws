@@ -1,4 +1,4 @@
-package com.exasol.ciisonlation.aws;
+package com.exasol.ciisolation.aws;
 
 import static software.amazon.awssdk.services.cloudformation.model.StackStatus.*;
 

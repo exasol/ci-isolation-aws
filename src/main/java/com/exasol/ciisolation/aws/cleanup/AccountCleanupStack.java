@@ -1,8 +1,8 @@
-package com.exasol.ciisonlation.aws.cleanup;
+package com.exasol.ciisolation.aws.cleanup;
 
 import java.util.List;
 
-import com.exasol.ciisonlation.aws.TaggedStack;
+import com.exasol.ciisolation.aws.TaggedStack;
 
 import software.amazon.awscdk.core.Construct;
 import software.amazon.awscdk.services.codebuild.*;
@@ -29,6 +29,10 @@ public class AccountCleanupStack extends TaggedStack {
      */
     public AccountCleanupStack(final Construct scope) {
         super(scope, CLEANUP_STACK_NAME, null, "ci-account-cleanup");
+        defineResources();
+    }
+
+    private void defineResources() {
         final Role cleanupRole = new Role(this, AWS_ACCOUNT_CLEANUP_ROLE, RoleProps.builder()
                 .roleName(AWS_ACCOUNT_CLEANUP_ROLE).assumedBy(new ServicePrincipal("codebuild.amazonaws.com")).build());
         addCleanupPolicy(cleanupRole);

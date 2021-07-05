@@ -1,4 +1,4 @@
-package com.exasol.ciisonlation.aws;
+package com.exasol.ciisolation.aws;
 
 import java.io.FileReader;
 import java.io.IOException;

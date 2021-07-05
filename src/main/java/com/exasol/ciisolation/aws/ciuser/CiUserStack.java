@@ -1,12 +1,12 @@
-package com.exasol.ciisonlation.aws.ciuser;
+package com.exasol.ciisolation.aws.ciuser;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 import org.jetbrains.annotations.NotNull;
 
-import com.exasol.ciisonlation.aws.TaggedStack;
-import com.exasol.ciisonlation.aws.cleanup.AccountCleanupStack;
+import com.exasol.ciisolation.aws.TaggedStack;
+import com.exasol.ciisolation.aws.cleanup.AccountCleanupStack;
 
 import software.amazon.awscdk.core.CfnOutput;
 import software.amazon.awscdk.core.Construct;
@@ -22,6 +22,10 @@ public class CiUserStack extends TaggedStack {
 
     public CiUserStack(final Construct scope, final CiUserStackProps props) {
         super(scope, PROTECTED + props.projectName() + "-ci-setup", null, props.projectName());
+        defineResources(props);
+    }
+
+    private void defineResources(final CiUserStackProps props) {
         final String ciUserName = PROTECTED + props.projectName() + "-ci-user";
         final IManagedPolicy denyChangingProtectedResourcesPolicy = ManagedPolicy.fromManagedPolicyName(this,
                 AccountCleanupStack.DENY_CHANGING_PROTECTED_RESOURCE_POLICY,

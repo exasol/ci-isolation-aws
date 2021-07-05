@@ -1,4 +1,4 @@
-package com.exasol.ciisonlation.aws.ciuser;
+package com.exasol.ciisolation.aws.ciuser;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;

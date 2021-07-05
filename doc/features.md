@@ -6,11 +6,11 @@ The AWS CI Account Setup provisions an AWS account for running tests from CI sec
 
 `feat~create-aws-cresources-in-ci~1`
 
-The AWS CI Account Setup can create AWS resources from CI builds in out GitHub Actions CI builds.
+The AWS CI Account Setup can create AWS resources from CI builds in our GitHub Actions CI builds.
 
 Rationale:
 
-* We can not use a different CI system since [Release Droid](https://github.com/exasol/release-droid) is built using GitHub actions.
+* We need to support GitHub Actions since [Release Droid](https://github.com/exasol/release-droid) is built using GitHub actions.
 * Even so it's favorable to use local resources like local versions in docker containers for some integrations we need to test against the real cloud services. Possibles reasons are:
     * There is no adequate local version
     * Performance testing
