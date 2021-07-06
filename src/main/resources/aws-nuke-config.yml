@@ -1,0 +1,45 @@
+regions:
+  - eu-west-1
+  - us-east-1
+  - global
+  - eu-central-1
+
+account-blocklist:
+  - "123456789123"
+
+accounts:
+  "ACCOUNT_ID":
+    filters:
+      IAMUser:
+        - type: "glob"
+          value: "protected-*"
+      IAMUserAccessKey:
+        - type: "glob"
+          value: "protected-* -> *"
+      IAMUserPolicyAttachment:
+        - type: "glob"
+          value: "ci-user -> *"
+      IAMPolicy:
+        - type: "glob"
+          value: "*/protected-*"
+      IAMRole:
+        - "OrganizationAccountAccessRole"
+        - "OrganizationIAMRoleAccess"
+      IAMRolePolicyAttachment:
+        - "OrganizationIAMRoleAccess -> IAMFullAccess"
+      IAMRolePolicy:
+        - "OrganizationAccountAccessRole -> AdministratorAccess"
+      CloudTrailTrail:
+        - type: "glob"
+          value: "*"
+      CodeBuildProject:
+        - type: "glob"
+          value: "protected-*"
+      CloudWatchLogsLogGroup:
+        - "/aws/codebuild/protected-aws-account-cleanup-runner"
+      CloudFormationStack:
+        - type: "glob"
+          value: "protected-*"
+      CloudWatchEventsRule:
+        - type: "glob"
+          value: "*protected-cleanup-trigger"
