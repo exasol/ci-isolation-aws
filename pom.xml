@@ -4,6 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.exasol</groupId>
     <artifactId>ci-isolation-aws</artifactId>
+    <name>CI Isolation AWS</name>
+    <description>Setup for provisioning an AWS sub-account for Continuous Integration (CI) testing.</description>
     <version>0.1.0</version>
     <url>https://github.com/exasol/ci-isolation-aws</url>
     <licenses>
