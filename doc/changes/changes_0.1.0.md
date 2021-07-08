@@ -1,6 +1,6 @@
-# ci-isolation-aws 0.1.0, released 2021-??-??
+# ci-isolation-aws 0.1.0, released 2021-07-08
 
-Code name:
+Code name: Initial Release
 
 ## Features
 
