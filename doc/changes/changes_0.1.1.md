@@ -1,4 +1,4 @@
-# CI Isolation AWS 0.1.1, released 2021-??-??
+# CI Isolation AWS 0.1.1, released 2021-08-11
 
 Code name: Permission Issue Fix
 
