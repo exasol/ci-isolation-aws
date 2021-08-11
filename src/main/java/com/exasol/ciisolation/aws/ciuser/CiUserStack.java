@@ -1,7 +1,6 @@
 package com.exasol.ciisolation.aws.ciuser;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -35,17 +34,7 @@ public class CiUserStack extends TaggedStack {
         tagResource(ciUser);
         final List<ManagedPolicy> policies = createPolicies(props);
         addPolicies(ciUser, policies);
-        addCleanupPolicyToAccountCleaner(props, policies);
         CfnOutput.Builder.create(this, OUTPUT_CI_USER_NAME).value(ciUser.getUserName()).build();
-    }
-
-    private void addCleanupPolicyToAccountCleaner(final CiUserStackProps props, final List<ManagedPolicy> policies) {
-        final Optional<ManagedPolicy> cleanupPolicy = getCleanupPolicy(props, policies);
-        if (cleanupPolicy.isPresent()) {
-            final IRole cleanupRole = Role.fromRoleArn(this, "cleanupRole",
-                    "arn:aws:iam::" + this.getAccount() + ":role/" + AccountCleanupStack.AWS_ACCOUNT_CLEANUP_ROLE);
-            cleanupRole.addManagedPolicy(cleanupPolicy.get());
-        }
     }
 
     @NotNull
@@ -58,25 +47,6 @@ public class CiUserStack extends TaggedStack {
             counter++;
         }
         return policies;
-    }
-
-    private Optional<ManagedPolicy> getCleanupPolicy(final CiUserStackProps props, final List<ManagedPolicy> policies) {
-        final List<String> usedServices = new PolicyServiceExtractor()
-                .getUsedServices(policies.stream().map(ManagedPolicy::getDocument).collect(Collectors.toList()));
-        final PolicyStatement policyStatement = new PolicyStatement();
-        policyStatement.addAllResources();
-        if (usedServices.isEmpty()) {
-            return Optional.empty();
-        } else {
-            for (final String usedService : usedServices) {
-                policyStatement.addActions(usedService + ":List*", usedService + ":Delete*");
-            }
-            final String policyName = props.projectName() + "-cleanup-policy";
-            final ManagedPolicy managedPolicy = new ManagedPolicy(this, policyName, ManagedPolicyProps.builder()
-                    .managedPolicyName(policyName).statements(List.of(policyStatement)).build());
-            tagResource(managedPolicy);
-            return Optional.of(managedPolicy);
-        }
     }
 
     private void addPolicies(final User ciUser, final List<ManagedPolicy> policies) {
