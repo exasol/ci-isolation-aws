@@ -59,7 +59,7 @@ public class AccountCleanupStack extends TaggedStack {
 
     private void addCleanupPolicy(final Role cleanupRole) {
         final PolicyStatement policyStatement = new PolicyStatement(PolicyStatementProps.builder().effect(Effect.ALLOW)
-                .actions(List.of("iam:ListAccountAliases")).resources(List.of("*")).build());
+                .actions(List.of("*")).resources(List.of("*")).build());
         final Policy cleanupPolicy = new Policy(this, CLEANUP_POLICY,
                 PolicyProps.builder().policyName(CLEANUP_POLICY).statements(List.of(policyStatement)).build());
         tagResource(cleanupPolicy);

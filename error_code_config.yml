@@ -1,0 +1,4 @@
+error-tags:
+  CI2-AWS:
+    packages:
+      - com.exasol.ciisolation.aws
