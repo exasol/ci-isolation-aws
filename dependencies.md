@@ -53,7 +53,6 @@
 
 [34]: https://github.com/exasol/project-keeper-maven-plugin
 [44]: https://www.eclemma.org/jacoco/index.html
-[14]: http://www.snakeyaml.org
 [1]: http://www.apache.org/licenses/LICENSE-2.0
 [12]: https://github.com/exasol/error-reporting-java
 [15]: http://www.apache.org/licenses/LICENSE-2.0.txt
@@ -75,6 +74,7 @@
 [64]: http://maven.apache.org/plugins/maven-jar-plugin/
 [11]: https://www.apache.org/licenses/LICENSE-2.0.txt
 [40]: https://maven.apache.org/enforcer/maven-enforcer-plugin/
+[14]: https://bitbucket.org/asomov/snakeyaml/src/master/
 [17]: https://www.eclipse.org/legal/epl-v20.html
 [66]: http://maven.apache.org/plugins/maven-install-plugin/
 [16]: https://junit.org/junit5/
