@@ -43,3 +43,9 @@ accounts:
       CloudWatchEventsRule:
         - type: "glob"
           value: "*protected-cleanup-trigger"
+      S3Bucket:
+        - type: "glob"
+          value: "s3://persistent-*"
+      S3Object:
+        - type: "glob"
+          value: "s3://persistent-**"

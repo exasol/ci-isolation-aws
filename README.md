@@ -23,6 +23,11 @@ This repository contains a setup for provisioning an AWS sub-account for Continu
 
 As shown in the picture the repository consists of two parts: cleanup-stack and ci-user-stack. The cleanup-stack is only required once per account. The ci-user-stack for each project that you want to test.
 
+The cleanup stack deletes all resources in the AWS account except:
+
+* Some resources prefixed with `protected-`: These are the resources of the ci-isolation itself. For example the code-build jobs that deletes everything. The ci-users are not allowed to create such resources.
+* S3 buckets and prefixed with `persistent-`. You can create such buckets to store data that is not deleted. For example for long-term-caching.
+
 ## Usage
 
 First deploy the ci-user-stack from this repository:
