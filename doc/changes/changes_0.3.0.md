@@ -1,4 +1,4 @@
-# CI Isolation AWS 0.3.0, released 2021-10-11
+# CI Isolation AWS 0.3.0, released 2021-10-08
 
 Code name: Persistent S3-Buckets
 
