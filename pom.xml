@@ -6,7 +6,7 @@
     <artifactId>ci-isolation-aws</artifactId>
     <name>CI Isolation AWS</name>
     <description>Setup for provisioning an AWS sub-account for Continuous Integration (CI) testing.</description>
-    <version>0.3.0</version>
+    <version>1.0.0</version>
     <url>https://github.com/exasol/ci-isolation-aws</url>
     <licenses>
         <license>
@@ -31,7 +31,7 @@
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cdk.version>1.126.0</cdk.version>
+        <cdk.version>1.129.0</cdk.version>
         <junit.version>5.8.1</junit.version>
         <gpg.skip>true</gpg.skip>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
