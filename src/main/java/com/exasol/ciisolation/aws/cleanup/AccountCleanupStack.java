@@ -15,10 +15,15 @@ import software.amazon.awscdk.services.iam.*;
  * account each day at 6:00AM.
  */
 public class AccountCleanupStack extends TaggedStack {
+    /** The name of the account cleanup role */
     public static final String AWS_ACCOUNT_CLEANUP_ROLE = "protected-aws-account-cleanup-role";
+    /** The name of the CodeBuild project */
     public static final String AWS_ACCOUNT_CLEANUP_RUNNER = "protected-aws-account-cleanup-runner";
+    /** The name of the policy that denies change protected resources */
     public static final String DENY_CHANGING_PROTECTED_RESOURCE_POLICY = "protected-deny-changing-protected-resource-policy";
+    /** The name of the cleanup policy */
     public static final String CLEANUP_POLICY = "protected-generic-cleanup-policy";
+    /** The name of the cleanup trigger */
     public static final String CLEANUP_TRIGGER = "protected-cleanup-trigger";
     private static final String CLEANUP_STACK_NAME = "protected-ci-account-cleanup";
 

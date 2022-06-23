@@ -12,13 +12,19 @@ import software.amazon.awscdk.core.Construct;
 import software.amazon.awscdk.services.iam.*;
 
 /**
- * This class defines a cloudformation stack with a user for CI testing. Typically this stack is used from a project
+ * This class defines a CloudFormation stack with a user for CI testing. Typically this stack is used from a project
  * specific CI CDK setup.
  */
 public class CiUserStack extends TaggedStack {
+    /** The output name of the CI user name */
     public static final String OUTPUT_CI_USER_NAME = "ciUserName";
-    public static final String PROTECTED = "protected-";
+    private static final String PROTECTED = "protected-";
 
+    /**
+     * Creates a new stack for the CI user.
+     * @param scope the scope
+     * @param props the properties
+     */
     public CiUserStack(final Construct scope, final CiUserStackProps props) {
         super(scope, PROTECTED + props.projectName() + "-ci-setup", null, props.projectName());
         defineResources(props);
