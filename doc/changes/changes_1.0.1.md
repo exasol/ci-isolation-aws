@@ -23,6 +23,7 @@ Code name: Dependency updates
 
 ### Test Dependency Updates
 
+* Added `commons-codec:commons-codec:1.15`
 * Updated `org.junit.jupiter:junit-jupiter-api:5.8.1` to `5.8.2`
 * Updated `org.junit.jupiter:junit-jupiter-engine:5.8.1` to `5.8.2`
 * Updated `software.amazon.awssdk:cloudformation:2.17.55` to `2.17.217`
