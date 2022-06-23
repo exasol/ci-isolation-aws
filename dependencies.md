@@ -58,7 +58,6 @@
 [15]: http://www.apache.org/licenses/LICENSE-2.0.txt
 [48]: https://maven.apache.org/surefire/maven-surefire-plugin/
 [60]: http://www.sonatype.com/public-parent/nexus-maven-plugins/nexus-staging/nexus-staging-maven-plugin/
-[10]: https://github.com/google/gson/gson
 [66]: http://maven.apache.org/plugins/maven-clean-plugin/
 [22]: https://aws.amazon.com/sdkforjava
 [13]: https://opensource.org/licenses/MIT
@@ -70,6 +69,7 @@
 [21]: http://opensource.org/licenses/BSD-3-Clause
 [34]: https://maven.apache.org/plugins/maven-compiler-plugin/
 [63]: https://www.eclipse.org/legal/epl-2.0/
+[10]: https://github.com/google/gson
 [52]: https://maven.apache.org/plugins/maven-deploy-plugin/
 [61]: http://www.eclipse.org/legal/epl-v10.html
 [33]: http://www.gnu.org/licenses/lgpl.txt
