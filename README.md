@@ -1,7 +1,7 @@
 # AWS CI Account Setup
 
 [![Build Status](https://github.com/exasol/ci-isolation-aws/actions/workflows/ci-build.yml/badge.svg)](https://github.com/exasol/ci-isolation-aws/actions/workflows/ci-build.yml)
-[![Maven Central](https://img.shields.io/maven-central/v/com.exasol/ci-isolation-aws)](https://search.maven.org/artifact/com.exasol/ci-isolation-aws)
+[![Maven Central – CI Isolation AWS](https://img.shields.io/maven-central/v/com.exasol/ci-isolation-aws)](https://search.maven.org/artifact/com.exasol/ci-isolation-aws)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aci-isolation-aws&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.exasol%3Aci-isolation-aws)
 

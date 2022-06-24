@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 import software.amazon.awscdk.services.iam.PolicyDocument;
 
-public class PolicyServiceExtractor {
+class PolicyServiceExtractor {
     List<String> getUsedServices(final List<PolicyDocument> policyDocuments) {
         final Stream<String> actions = policyDocuments.stream()
                 .flatMap(policyDocument -> findActions(policyDocument.toJSON()).stream());
