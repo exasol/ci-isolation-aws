@@ -1,10 +1,8 @@
-# CI Isolation AWS 1.0.1, released 2022-06-23
+# CI Isolation AWS 1.0.1, released 2022-06-24
 
 Code name: Dependency updates
 
-## Summary
-
-## Features
+## Bugfixes
 
 * #15: Updated dependencies
 
