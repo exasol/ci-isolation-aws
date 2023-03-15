@@ -1,4 +1,4 @@
-# CI Isolation AWS 1.0.3, released 2023-??-??
+# CI Isolation AWS 1.0.3, released 2023-03-15
 
 Code name: Upgrade dependencies
 
