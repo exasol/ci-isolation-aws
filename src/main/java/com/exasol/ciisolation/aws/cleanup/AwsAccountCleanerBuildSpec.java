@@ -31,10 +31,11 @@ class AwsAccountCleanerBuildSpec extends BuildSpec {
     private String[] getInstallSteps() {
         return new String[] { getWriteToFileCommand(getAwsNukeConfig(), AWS_NUKE_CONFIG), //
                 "cat aws-nuke-config.yml", //
-                "wget -q https://github.com/rebuy-de/aws-nuke/releases/download/v2.15.0/aws-nuke-v2.15.0-linux-amd64.tar.gz -O aws-nuke.tar.gz", //
-                "echo \"7d8b50fec337a546e22d1d4d0a2fd3363f140f38  aws-nuke.tar.gz\" | shasum -c",
+                "export version=2.21.2", //
+                "wget --quiet https://github.com/rebuy-de/aws-nuke/releases/download/v${version}/aws-nuke-v${version}-linux-amd64.tar.gz --output-document=aws-nuke.tar.gz", //
+                "echo \"1a2ba281d5baac1119b40da3a4b08de28221d0ce55a92169aa99f2b86ff991c2  aws-nuke.tar.gz\" | shasum --check --algorithm 256 --binary",
                 "tar -xvzf aws-nuke.tar.gz", //
-                "mv aws-nuke-v2.15.0-linux-amd64 /bin/aws-nuke", //
+                "mv aws-nuke-v${version}-linux-amd64 /bin/aws-nuke", //
                 "chmod +x /bin/aws-nuke" };
     }
 

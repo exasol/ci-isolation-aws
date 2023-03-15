@@ -19,16 +19,30 @@ accounts:
       IAMUserPolicyAttachment:
         - type: "glob"
           value: "ci-user -> *"
+        - type: "glob"
+          value: "protected-* -> *"
       IAMPolicy:
         - type: "glob"
           value: "*/protected-*"
       IAMRole:
         - "OrganizationAccountAccessRole"
         - "OrganizationIAMRoleAccess"
+        - type: "glob"
+          value: "protected-*"
+        - type: "glob"
+          value: "cdk-*-role-*"
       IAMRolePolicyAttachment:
         - "OrganizationIAMRoleAccess -> IAMFullAccess"
+        - type: "glob"
+          value: "protected-* -> *"
+        - type: "glob"
+          value: "cdk-*-role-* -> *"
       IAMRolePolicy:
         - "OrganizationAccountAccessRole -> AdministratorAccess"
+        - type: "glob"
+          value: "protected-* -> *"
+        - type: "glob"
+          value: "cdk-*-role-* -> *"
       CloudTrailTrail:
         - type: "glob"
           value: "*"
@@ -40,12 +54,27 @@ accounts:
       CloudFormationStack:
         - type: "glob"
           value: "protected-*"
+        - "CDKToolkit"
       CloudWatchEventsRule:
         - type: "glob"
           value: "*protected-cleanup-trigger"
       S3Bucket:
         - type: "glob"
           value: "s3://persistent-*"
+        - type: "glob"
+          value: "s3://cdk-*-assets-*"
+      OpsWorksUserProfile:
+        - type: "glob"
+          value: "arn:aws:sts::*:assumed-role/protected-*/*"
+      SSMParameter:
+        - type: "glob"
+          value: "/cdk-bootstrap/*/version"
+      CloudWatchEventsTarget:
+        - type: "glob"
+          value: "Rule: protected-*"
+      ECRRepository:
+        - type: "glob"
+          value: "Repository: cdk-*-container-assets-*"
     resource-types:
       excludes:
         - S3Object
