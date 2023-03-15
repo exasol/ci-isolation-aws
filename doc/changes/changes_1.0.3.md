@@ -1,14 +1,15 @@
 # CI Isolation AWS 1.0.3, released 2023-03-15
 
-Code name: Upgrade dependencies
+Code name: Keep protected roles and CDK Bootstrap stack
 
 ## Summary
 
-This release upgrades dependency snakeyaml to fix CVE-2022-38752.
+This release filters roles with "protected" prefix and CDK Bootstrap stack resources. It also upgrades dependency snakeyaml to fix CVE-2022-38752.
 
-## Features
+## Bugfixes
 
 * #20: Upgrade snakeyaml and other dependencies
+* #19: Don't delete roles with "protected" prefix.
 
 ## Dependency Updates
 
