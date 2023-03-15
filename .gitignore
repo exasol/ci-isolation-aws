@@ -3,7 +3,6 @@ target
 .classpath
 .project
 .idea
-.vscode
 *.iml
 
 # CDK asset staging directory
