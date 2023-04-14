@@ -1,6 +1,8 @@
 package com.exasol.ciisolation.aws;
 
-import software.amazon.awscdk.core.*;
+import software.amazon.awscdk.*;
+import software.constructs.Construct;
+import software.constructs.IConstruct;
 
 /**
  * Stack with Tags.

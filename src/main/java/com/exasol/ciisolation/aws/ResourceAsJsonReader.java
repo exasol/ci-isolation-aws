@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
+import com.exasol.errorreporting.ExaError;
 import com.google.gson.Gson;
 
 /**
@@ -25,6 +26,10 @@ class ResourceAsJsonReader {
 
     private String getResourceAsString(final String resourceName) {
         try (final InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream(resourceName)) {
+            if (resourceAsStream == null) {
+                throw new IllegalArgumentException(ExaError.messageBuilder("E-CI2-AWS-9")
+                        .message("Resource {{resource name}} not found", resourceName).toString());
+            }
             return new String(Objects.requireNonNull(resourceAsStream).readAllBytes(), StandardCharsets.UTF_8);
         } catch (final IOException exception) {
             throw new IllegalStateException(exception);

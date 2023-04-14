@@ -10,7 +10,7 @@ import org.junit.jupiter.api.*;
 
 import com.exasol.ciisolation.aws.ciuser.CiUserStack;
 
-import software.amazon.awscdk.core.App;
+import software.amazon.awscdk.App;
 import software.amazon.awssdk.auth.credentials.*;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.codebuild.CodeBuildClient;

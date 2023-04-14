@@ -2,12 +2,12 @@ package com.exasol.ciisolation.aws;
 
 import com.exasol.ciisolation.aws.cleanup.AccountCleanupStack;
 
-import software.amazon.awscdk.core.App;
+import software.amazon.awscdk.App;
 
 /**
  * Entry point class of the CDK app.
  */
-public class CiUserApp {
+public class AccountCleanupApp {
     /**
      * Entry point of the CDK app.
      * 

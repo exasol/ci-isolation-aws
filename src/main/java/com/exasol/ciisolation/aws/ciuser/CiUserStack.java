@@ -7,9 +7,9 @@ import org.jetbrains.annotations.NotNull;
 import com.exasol.ciisolation.aws.TaggedStack;
 import com.exasol.ciisolation.aws.cleanup.AccountCleanupStack;
 
-import software.amazon.awscdk.core.CfnOutput;
-import software.amazon.awscdk.core.Construct;
+import software.amazon.awscdk.CfnOutput;
 import software.amazon.awscdk.services.iam.*;
+import software.constructs.Construct;
 
 /**
  * This class defines a CloudFormation stack with a user for CI testing. Typically this stack is used from a project

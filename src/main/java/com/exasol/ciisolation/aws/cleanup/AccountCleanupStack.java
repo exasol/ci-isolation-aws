@@ -4,11 +4,11 @@ import java.util.List;
 
 import com.exasol.ciisolation.aws.TaggedStack;
 
-import software.amazon.awscdk.core.Construct;
 import software.amazon.awscdk.services.codebuild.*;
 import software.amazon.awscdk.services.events.*;
 import software.amazon.awscdk.services.events.targets.CodeBuildProject;
 import software.amazon.awscdk.services.iam.*;
+import software.constructs.Construct;
 
 /**
  * This class creates an CloudFormation stack for a code build job that deletes all unprotected resources in an AWS

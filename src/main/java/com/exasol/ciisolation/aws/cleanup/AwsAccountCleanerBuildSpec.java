@@ -1,10 +1,12 @@
 package com.exasol.ciisolation.aws.cleanup;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import com.exasol.errorreporting.ExaError;
 
 import software.amazon.awscdk.services.codebuild.BuildSpec;
+import software.constructs.Construct;
 
 /**
  * This class builds a config for an AWS CodeBuild that runs aws-nuke for cleaning up the AWS account.
@@ -55,6 +57,11 @@ class AwsAccountCleanerBuildSpec extends BuildSpec {
     @Override
     public @NotNull String toBuildSpec() {
         return this.buildSpec;
+    }
+
+    @Override
+    public @NotNull String toBuildSpec(@Nullable final Construct scope) {
+        return this.toBuildSpec();
     }
 
     @Override
