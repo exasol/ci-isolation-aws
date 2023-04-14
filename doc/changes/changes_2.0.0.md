@@ -29,6 +29,7 @@ This release upgrades AWS CDK from v1 to v2 which is a breaking change. See the 
 ### Test Dependency Updates
 
 * Removed `org.junit.jupiter:junit-jupiter-engine:5.9.2`
+* Added `org.slf4j:slf4j-jdk14:2.0.7`
 * Updated `software.amazon.awssdk:cloudformation:2.20.24` to `2.20.46`
 * Updated `software.amazon.awssdk:codebuild:2.20.24` to `2.20.46`
 * Updated `software.amazon.awssdk:iam:2.20.24` to `2.20.46`
