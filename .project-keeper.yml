@@ -5,5 +5,3 @@ sources:
       - maven_central
 linkReplacements:
   - "https://github.com/google/gson/gson|https://github.com/google/gson"
-excludes:
-  - regex: "E-PK-CORE-53: The dependencies.md file has outdated content.*"
