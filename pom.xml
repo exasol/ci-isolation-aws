@@ -93,7 +93,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>com.exasol.ciisolation.aws.CiUserApp</mainClass>
+                    <mainClass>com.exasol.ciisolation.aws.AccountCleanupApp</mainClass>
                 </configuration>
             </plugin>
             <plugin>
