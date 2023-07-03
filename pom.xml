@@ -5,14 +5,14 @@
     <artifactId>ci-isolation-aws</artifactId>
     <name>CI Isolation AWS</name>
     <description>Setup for provisioning an AWS sub-account for Continuous Integration (CI) testing.</description>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <url>https://github.com/exasol/ci-isolation-aws/</url>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>software.amazon.awssdk</groupId>
                 <artifactId>bom</artifactId>
-                <version>2.20.46</version>
+                <version>2.20.97</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -23,12 +23,12 @@
         <dependency>
             <groupId>software.amazon.awscdk</groupId>
             <artifactId>aws-cdk-lib</artifactId>
-            <version>2.74.0</version>
+            <version>2.86.0</version>
         </dependency>
         <dependency>
             <groupId>software.constructs</groupId>
             <artifactId>constructs</artifactId>
-            <version>10.1.310</version>
+            <version>10.2.67</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -49,7 +49,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.2</version>
+            <version>5.9.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -108,26 +108,12 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.sonatype.ossindex.maven</groupId>
-                <artifactId>ossindex-maven-plugin</artifactId>
-                <configuration>
-                    <excludeVulnerabilityIds>
-                        <!-- io.netty:netty-handler:4.1.77.Final: https://ossindex.sonatype.org/vulnerability/sonatype-2020-0026
-                             AWS SDK is not affected: https://github.com/aws/aws-sdk-java-v2/issues/3263#issuecomment-1163600532 -->
-                        <exclude>sonatype-2020-0026</exclude>
-                        <!-- Transitive dependency of software.amazon.awscdk:core: com.fasterxml.jackson.core:jackson-core:jar:2.13.5
-                             CWE-400: Uncontrolled Resource Consumption is acceptable in this project -->
-                        <exclude>sonatype-2022-6438</exclude>
-                    </excludeVulnerabilityIds>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
     <parent>
         <artifactId>ci-isolation-aws-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>2.0.0</version>
+        <version>2.0.1</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
 </project>
