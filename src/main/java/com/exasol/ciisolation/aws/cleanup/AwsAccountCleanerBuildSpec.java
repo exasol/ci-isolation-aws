@@ -43,7 +43,7 @@ class AwsAccountCleanerBuildSpec extends BuildSpec {
 
     private String getWriteToFileCommand(final String content, final String fileName) {
         if (content.contains("\nEOL\n")) {
-            throw new IllegalArgumentException(ExaError.messageBuilder("E-CI2-AWS-2").message(
+            throw new IllegalArgumentException(ExaError.messageBuilder("E-CI2AWS-2").message(
                     "Failed to build write-to-file-command. The content contained '\\nEOF\\n' which is not allowed. Content:\n {{content}}",
                     content).toString());
         }

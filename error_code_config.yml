@@ -1,5 +1,5 @@
 error-tags:
-  CI2-AWS:
+  CI2AWS:
     packages:
       - com.exasol.ciisolation.aws
     highest-index: 9

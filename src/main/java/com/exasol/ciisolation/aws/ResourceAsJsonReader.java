@@ -27,7 +27,7 @@ class ResourceAsJsonReader {
     private String getResourceAsString(final String resourceName) {
         try (final InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream(resourceName)) {
             if (resourceAsStream == null) {
-                throw new IllegalArgumentException(ExaError.messageBuilder("E-CI2-AWS-9")
+                throw new IllegalArgumentException(ExaError.messageBuilder("E-CI2AWS-9")
                         .message("Resource {{resource name}} not found", resourceName).toString());
             }
             return new String(Objects.requireNonNull(resourceAsStream).readAllBytes(), StandardCharsets.UTF_8);

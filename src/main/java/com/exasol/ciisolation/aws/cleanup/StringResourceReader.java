@@ -20,7 +20,7 @@ class StringResourceReader {
             return new String(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(resourceName))
                     .readAllBytes());
         } catch (final IOException | NullPointerException exception) {
-            throw new IllegalStateException(ExaError.messageBuilder("F-CI2-AWS-1")
+            throw new IllegalStateException(ExaError.messageBuilder("F-CI2AWS-1")
                     .message("Failed to read required resource {{resource}}.", resourceName).ticketMitigation()
                     .toString(), exception);
         }

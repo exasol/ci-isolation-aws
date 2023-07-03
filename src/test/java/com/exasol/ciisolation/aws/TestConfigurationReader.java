@@ -17,7 +17,7 @@ public class TestConfigurationReader {
     private String getParameter(final Map<String, String> configuration, final String parameter) {
         final String value = configuration.get(parameter);
         if (value == null) {
-            throw new IllegalArgumentException(ExaError.messageBuilder("E-CI2-AWS-8").message(
+            throw new IllegalArgumentException(ExaError.messageBuilder("E-CI2AWS-8").message(
                     "Invalid test_config.yaml. The configuration does not contain the required property {{missing property}}.",
                     parameter).toString());
         } else {
@@ -30,7 +30,7 @@ public class TestConfigurationReader {
         try (final FileReader fileReader = new FileReader("test_config.yaml")) {
             return yaml.load(fileReader);
         } catch (final IOException exception) {
-            throw new IllegalStateException(ExaError.messageBuilder("E-CI2-AWS-7")
+            throw new IllegalStateException(ExaError.messageBuilder("E-CI2AWS-7")
                     .message("Could not open test_config.yaml.")
                     .mitigation("Please create the file according to the description in the README.md.").toString(),
                     exception);
