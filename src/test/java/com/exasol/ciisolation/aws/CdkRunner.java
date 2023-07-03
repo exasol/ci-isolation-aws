@@ -71,7 +71,7 @@ public class CdkRunner {
             } else if (Set.of(CREATE_IN_PROGRESS, IMPORT_COMPLETE, IMPORT_IN_PROGRESS).contains(stackStatus)) {
                 return false;
             } else {
-                throw new IllegalStateException(ExaError.messageBuilder("F-CI2-AWS-6")
+                throw new IllegalStateException(ExaError.messageBuilder("F-CI2AWS-6")
                         .message("Stack creation failed (status: {{stack status}}).", stackStatus).toString());
             }
         } else {
@@ -97,7 +97,7 @@ public class CdkRunner {
         try {
             return this.json.writeValueAsString(app.synth().getStackArtifact(stack.getArtifactId()).getTemplate());
         } catch (final JsonProcessingException exception) {
-            throw new IllegalStateException(ExaError.messageBuilder("F-CI2-AWS-5")
+            throw new IllegalStateException(ExaError.messageBuilder("F-CI2AWS-5")
                     .message("Failed to render stack as CloudFormation JSON template.").toString(), exception);
         }
     }
