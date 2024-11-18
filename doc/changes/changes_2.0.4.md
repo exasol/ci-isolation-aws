@@ -1,12 +1,14 @@
-# CI Isolation AWS 2.0.4, released 2024-??-??
+# CI Isolation AWS 2.0.4, released 2024-11-18
 
-Code name:
+Code name: Fix vulnerability CVE-2024-47535: io.netty:netty-common:jar:4.1.108.Final:test
 
 ## Summary
 
-## Features
+This release fixes vulnerability CVE-2024-47535 in `io.netty:netty-common:jar:4.1.108.Final:test`.
 
-* ISSUE_NUMBER: description
+## Security
+
+* #34: Fixed vulnerability CVE-2024-47535 in `io.netty:netty-common:jar:4.1.108.Final:test`
 
 ## Dependency Updates
 
