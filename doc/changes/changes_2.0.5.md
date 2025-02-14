@@ -9,8 +9,8 @@ It also updates other dependencies.
 
 ## Security
 
-* #36: CVE-2025-25193
-* #37: CVE-2025-24970
+* #36: Fixed CVE-2025-25193
+* #37: Fixed CVE-2025-24970
 
 ## Dependency Updates
 
