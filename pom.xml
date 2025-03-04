@@ -5,14 +5,14 @@
     <artifactId>ci-isolation-aws</artifactId>
     <name>CI Isolation AWS</name>
     <description>Setup for provisioning an AWS sub-account for Continuous Integration (CI) testing.</description>
-    <version>2.0.5</version>
+    <version>2.1.0</version>
     <url>https://github.com/exasol/ci-isolation-aws/</url>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>software.amazon.awssdk</groupId>
                 <artifactId>bom</artifactId>
-                <version>2.30.20</version>
+                <version>2.30.32</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>software.amazon.awscdk</groupId>
             <artifactId>aws-cdk-lib</artifactId>
-            <version>2.178.2</version>
+            <version>2.181.1</version>
         </dependency>
         <dependency>
             <groupId>software.constructs</groupId>
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
-            <version>2.3</version>
+            <version>2.4</version>
         </dependency>
         <!-- test dependencies -->
         <dependency>
@@ -82,7 +82,7 @@
             <!-- Enable log output for integration tests -->
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-jdk14</artifactId>
-            <version>2.0.16</version>
+            <version>2.0.17</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -113,7 +113,7 @@
     <parent>
         <artifactId>ci-isolation-aws-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>2.0.5</version>
+        <version>2.1.0</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
 </project>

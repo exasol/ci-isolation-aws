@@ -21,7 +21,7 @@
 | [AWS Java SDK :: Services :: AWS STS][13]            | [Apache License, Version 2.0][14] |
 | [AWS Java SDK :: Services :: AWS CloudFormation][13] | [Apache License, Version 2.0][14] |
 | [AWS Java SDK :: Services :: AWS Code Build][13]     | [Apache License, Version 2.0][14] |
-| [SLF4J JDK14 Provider][15]                           | [MIT License][16]                 |
+| [SLF4J JDK14 Provider][15]                           | [MIT][16]                         |
 
 ## Plugin Dependencies
 
@@ -68,7 +68,7 @@
 [13]: https://aws.amazon.com/sdkforjava
 [14]: https://aws.amazon.com/apache2.0
 [15]: http://www.slf4j.org
-[16]: http://www.opensource.org/licenses/mit-license.php
+[16]: https://opensource.org/license/mit
 [17]: https://maven.apache.org/plugins/maven-clean-plugin/
 [18]: https://maven.apache.org/plugins/maven-install-plugin/
 [19]: https://maven.apache.org/plugins/maven-resources-plugin/
