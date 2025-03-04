@@ -38,39 +38,43 @@ public class CiUserStack extends TaggedStack {
                 AccountCleanupStack.DENY_CHANGING_PROTECTED_RESOURCE_POLICY,
                 AccountCleanupStack.DENY_CHANGING_PROTECTED_RESOURCE_POLICY);
 
-        final User ciUser = defineUser(props, denyChangingProtectedResourcesPolicy);
+        final User ciUser = defineUser(props);
+        setupResource(ciUser, denyChangingProtectedResourcesPolicy);
         CfnOutput.Builder.create(this, OUTPUT_CI_USER_NAME).value(ciUser.getUserName()).build();
 
         if (props.createRole()) {
-            final Role ciRole = defineRole(props, ciUser, denyChangingProtectedResourcesPolicy);
+            final Role ciRole = defineRole(props);
+            setupResource(ciRole, denyChangingProtectedResourcesPolicy);
             CfnOutput.Builder.create(this, OUTPUT_CI_ROLE_ARN).value(ciRole.getRoleArn()).build();
         }
     }
 
-    private @NotNull User defineUser(final CiUserStackProps props,
-                                     final IManagedPolicy denyChangingProtectedResourcesPolicy) {
+    private void setupResource(final IIdentity identity, final IManagedPolicy denyChangingProtectedResourcesPolicy) {
+        identity.addManagedPolicy(denyChangingProtectedResourcesPolicy);
+        tagResource(identity);
+    }
+
+    private @NotNull User defineUser(final CiUserStackProps props) {
         final String ciUserName = PROTECTED + props.projectName() + "-ci-user";
         final User ciUser = new User(this, ciUserName, UserProps.builder().userName(ciUserName).build());
-        ciUser.addManagedPolicy(denyChangingProtectedResourcesPolicy);
-        tagResource(ciUser);
-        final List<ManagedPolicy> policies = createPolicies(ciUserName, props.requiredPermissions());
-        addPolicies(ciUser, policies);
+        setupManagedPolicies(ciUser, props.requiredPermissions());
         return ciUser;
     }
 
-    private @NotNull Role defineRole(final CiUserStackProps props, final User ciUser,
-                                     final IManagedPolicy denyChangingProtectedResourcesPolicy) {
+    private @NotNull Role defineRole(final CiUserStackProps props) {
         final String ciRoleName = PROTECTED + props.projectName() + "-ci-role";
         final RoleProps roleProps = RoleProps.builder()
                 .roleName(ciRoleName)
-                .assumedBy(ciUser)
+                .assumedBy(new AccountPrincipal(this.getAccount()))
                 .build();
         final Role ciRole = new Role(this, ciRoleName, roleProps);
-        ciRole.addManagedPolicy(denyChangingProtectedResourcesPolicy);
-        tagResource(ciRole);
-        final List<ManagedPolicy> policies = createPolicies(ciRoleName, props.roleRequiredPermissions());
-        addPolicies(ciRole, policies);
+        setupManagedPolicies(ciRole, props.roleRequiredPermissions());
         return ciRole;
+    }
+
+    private void setupManagedPolicies(final IIdentity identity, final List<PolicyDocument> requiredPermissions) {
+        final List<ManagedPolicy> policies = createPolicies(identityName(identity), requiredPermissions);
+        addPolicies(identity, policies);
     }
 
     @NotNull
@@ -98,6 +102,16 @@ public class CiUserStack extends TaggedStack {
                 ManagedPolicyProps.builder().document(policyDocument).managedPolicyName(name).build());
         tagResource(managedPolicy);
         return managedPolicy;
+    }
+
+    private String identityName(final IIdentity identity) {
+        if (identity instanceof User) {
+            return ((User) identity).getUserName();
+        } else if (identity instanceof Role) {
+            return ((Role) identity).getRoleName();
+        } else {
+            throw new IllegalArgumentException("Unexpected identity class: " + identity.getClass().getName());
+        }
     }
 
     /**
