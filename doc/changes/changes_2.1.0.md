@@ -1,4 +1,4 @@
-# CI Isolation AWS 2.1.0, released 2025-03-05
+# CI Isolation AWS 2.1.0, released 2025-03-04
 
 Code name: Support creation of roles
 
