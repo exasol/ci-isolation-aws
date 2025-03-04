@@ -1,12 +1,17 @@
-# CI Isolation AWS 2.1.0, released 2025-??-??
+# CI Isolation AWS 2.1.0, released 2025-03-05
 
-Code name:
+Code name: Support creation of roles
 
 ## Summary
 
+This release adds the possibility to create roles with the CiUserStack using the `createRole` property and the
+`roleRequiredPermissions` to set specific permissions for the role.
+
+It also sets up the `SECURITY.md` for the repository. 
+
 ## Features
 
-* ISSUE_NUMBER: description
+* #40: Support the creation of Roles in the CiUserStack 
 
 ## Dependency Updates
 
