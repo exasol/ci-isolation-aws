@@ -18,8 +18,8 @@ import software.constructs.Construct;
 public class CiUserStack extends TaggedStack {
     /** The output name of the CI userName */
     public static final String OUTPUT_CI_USER_NAME = "ciUserName";
-    /** The output ARN of the CI role */
-    public static final String OUTPUT_CI_ROLE_ARN = "ciRoleArn";
+    /** The output name of the CI roleArn */
+    public static final String OUTPUT_CI_ROLE_NAME = "ciRoleName";
 
     private static final String PROTECTED = "protected-";
 
@@ -45,7 +45,7 @@ public class CiUserStack extends TaggedStack {
         if (props.createRole()) {
             final Role ciRole = defineRole(props);
             setupResource(ciRole, denyChangingProtectedResourcesPolicy);
-            CfnOutput.Builder.create(this, OUTPUT_CI_ROLE_ARN).value(ciRole.getRoleArn()).build();
+            CfnOutput.Builder.create(this, OUTPUT_CI_ROLE_NAME).value(ciRole.getRoleName()).build();
         }
     }
 
@@ -57,7 +57,7 @@ public class CiUserStack extends TaggedStack {
     private @NotNull User defineUser(final CiUserStackProps props) {
         final String ciUserName = PROTECTED + props.projectName() + "-ci-user";
         final User ciUser = new User(this, ciUserName, UserProps.builder().userName(ciUserName).build());
-        setupManagedPolicies(ciUser, props.requiredPermissions());
+        setupManagedPolicies(ciUser, ciUserName, props.requiredPermissions());
         return ciUser;
     }
 
@@ -68,12 +68,12 @@ public class CiUserStack extends TaggedStack {
                 .assumedBy(new AccountPrincipal(this.getAccount()))
                 .build();
         final Role ciRole = new Role(this, ciRoleName, roleProps);
-        setupManagedPolicies(ciRole, props.roleRequiredPermissions());
+        setupManagedPolicies(ciRole, ciRoleName, props.roleRequiredPermissions());
         return ciRole;
     }
 
-    private void setupManagedPolicies(final IIdentity identity, final List<PolicyDocument> requiredPermissions) {
-        final List<ManagedPolicy> policies = createPolicies(identityName(identity), requiredPermissions);
+    private void setupManagedPolicies(final IIdentity identity, final String basePolicyName, final List<PolicyDocument> requiredPermissions) {
+        final List<ManagedPolicy> policies = createPolicies(basePolicyName, requiredPermissions);
         addPolicies(identity, policies);
     }
 
@@ -102,16 +102,6 @@ public class CiUserStack extends TaggedStack {
                 ManagedPolicyProps.builder().document(policyDocument).managedPolicyName(name).build());
         tagResource(managedPolicy);
         return managedPolicy;
-    }
-
-    private String identityName(final IIdentity identity) {
-        if (identity instanceof User) {
-            return ((User) identity).getUserName();
-        } else if (identity instanceof Role) {
-            return ((Role) identity).getRoleName();
-        } else {
-            throw new IllegalArgumentException("Unexpected identity class: " + identity.getClass().getName());
-        }
     }
 
     /**

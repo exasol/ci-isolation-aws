@@ -8,7 +8,7 @@ import software.amazon.awscdk.services.iam.PolicyDocument;
 
 import java.util.Map;
 
-import static com.exasol.ciisolation.aws.ciuser.CiUserStack.OUTPUT_CI_ROLE_ARN;
+import static com.exasol.ciisolation.aws.ciuser.CiUserStack.OUTPUT_CI_ROLE_NAME;
 import static com.exasol.ciisolation.aws.ciuser.CiUserStack.OUTPUT_CI_USER_NAME;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
@@ -35,7 +35,7 @@ class CiUserStackTest {
                 .addRoleRequiredPermissions(permissions).build());
 
         final Template template = Template.fromStack(stack);
-        assertOutputs(template, OUTPUT_CI_USER_NAME, OUTPUT_CI_ROLE_ARN);
+        assertOutputs(template, OUTPUT_CI_USER_NAME, OUTPUT_CI_ROLE_NAME);
     }
 
     private void assertOutputs(final Template template, final String... outputNames) {
