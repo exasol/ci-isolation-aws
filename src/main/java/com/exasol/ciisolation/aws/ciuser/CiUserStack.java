@@ -43,7 +43,7 @@ public class CiUserStack extends TaggedStack {
         CfnOutput.Builder.create(this, OUTPUT_CI_USER_NAME).value(ciUser.getUserName()).build();
 
         if (props.createRole()) {
-            final Role ciRole = defineRole(props);
+            final Role ciRole = defineRole(props, ciUser);
             setupResource(ciRole, denyChangingProtectedResourcesPolicy);
             CfnOutput.Builder.create(this, OUTPUT_CI_ROLE_NAME).value(ciRole.getRoleName()).build();
         }
@@ -61,11 +61,11 @@ public class CiUserStack extends TaggedStack {
         return ciUser;
     }
 
-    private @NotNull Role defineRole(final CiUserStackProps props) {
+    private @NotNull Role defineRole(final CiUserStackProps props, final User ciUser) {
         final String ciRoleName = PROTECTED + props.projectName() + "-ci-role";
         final RoleProps roleProps = RoleProps.builder()
                 .roleName(ciRoleName)
-                .assumedBy(new AccountPrincipal(this.getAccount()))
+                .assumedBy(ciUser)
                 .build();
         final Role ciRole = new Role(this, ciRoleName, roleProps);
         setupManagedPolicies(ciRole, ciRoleName, props.roleRequiredPermissions());
