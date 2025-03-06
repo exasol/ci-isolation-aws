@@ -1,12 +1,16 @@
-# CI Isolation AWS 2.1.1, released 2025-??-??
+# CI Isolation AWS 2.1.1, released 2025-03-06
 
-Code name:
+Code name: Allow user to assume role
 
 ## Summary
 
-## Features
+This release fixes an issue with the new create role feature. By default, the created user was not 
+allowed to assume the role, only the root user in the account.
+With the fix the created user can assume the role.
 
-* ISSUE_NUMBER: description
+## Bugfixes
+
+* #42: User is not allowed to assume role
 
 ## Dependency Updates
 
