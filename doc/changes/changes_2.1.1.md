@@ -20,7 +20,11 @@ With the fix the created user can assume the role.
 
 ### Test Dependency Updates
 
-* Updated `software.amazon.awssdk:cloudformation:2.30.32` to `2.30.34`
-* Updated `software.amazon.awssdk:codebuild:2.30.32` to `2.30.34`
-* Updated `software.amazon.awssdk:iam:2.30.32` to `2.30.34`
-* Updated `software.amazon.awssdk:sts:2.30.32` to `2.30.34`
+* Updated `software.amazon.awssdk:cloudformation:2.30.32` to `2.31.20`
+* Updated `software.amazon.awssdk:codebuild:2.30.32` to `2.31.20`
+* Updated `software.amazon.awssdk:iam:2.30.32` to `2.31.20`
+* Updated `software.amazon.awssdk:sts:2.30.32` to `2.31.20`
+
+### Plugin Dependency Updates
+
+* Updated `com.exasol:project-keeper-maven-plugin:4.5.0` to `5.0.1`
