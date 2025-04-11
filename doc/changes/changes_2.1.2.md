@@ -1,12 +1,14 @@
-# CI Isolation AWS 2.1.2, released 2025-??-??
+# CI Isolation AWS 2.1.2, released 2025-04-11
 
-Code name:
+Code name: Support External ID to assume Role
 
 ## Summary
 
+This release supports specifying External IDs that will be required in the AssumeRole calls.
+
 ## Features
 
-* ISSUE_NUMBER: description
+* #44: Support External ID to assume role
 
 ## Dependency Updates
 
