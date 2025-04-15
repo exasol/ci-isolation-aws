@@ -66,6 +66,7 @@ public class CiUserStack extends TaggedStack {
         final RoleProps roleProps = RoleProps.builder()
                 .roleName(ciRoleName)
                 .assumedBy(ciUser)
+                .externalIds(props.roleExternalIds())
                 .build();
         final Role ciRole = new Role(this, ciRoleName, roleProps);
         setupManagedPolicies(ciRole, ciRoleName, props.roleRequiredPermissions());
@@ -132,6 +133,14 @@ public class CiUserStack extends TaggedStack {
         boolean createRole();
 
         /**
+         * Returns a list of external identifiers that the user must present
+         * (at least one) when assuming the role.
+         *
+         * @return a list of valid external identifiers
+         */
+        List<String> roleExternalIds();
+
+        /**
          * Get AWS permissions required for this CI user.
          *
          * @return permissions
@@ -154,14 +163,19 @@ public class CiUserStack extends TaggedStack {
         private final boolean createRole;
         private final List<PolicyDocument> requiredPermissions;
         private final List<PolicyDocument> roleRequiredPermissions;
+        private final List<String> roleExternalIds;
 
         private DefaultCiUserStackProps(final Builder builder) {
             this.projectName = builder.projectName;
             this.createRole = builder.createRole;
             this.requiredPermissions = builder.requiredPermissions;
             this.roleRequiredPermissions = builder.roleRequiredPermissions;
+            this.roleExternalIds = builder.roleExternalIds;
             if (!roleRequiredPermissions.isEmpty() && !createRole) {
                 throw new IllegalArgumentException("Only when createRole is true roleRequiredPermissions can be set");
+            }
+            if (!roleExternalIds.isEmpty() && !createRole) {
+                throw new IllegalArgumentException("Only when createRole is true roleExternalIds can be set");
             }
         }
 
@@ -185,12 +199,18 @@ public class CiUserStack extends TaggedStack {
             return roleRequiredPermissions;
         }
 
+        @Override
+        public List<String> roleExternalIds() {
+            return roleExternalIds;
+        }
+
         /**
          * Builder for {@link DefaultCiUserStackProps}.
          */
         public static class Builder {
             private final List<PolicyDocument> requiredPermissions = new ArrayList<>();
             private final List<PolicyDocument> roleRequiredPermissions = new ArrayList<>();
+            private final List<String> roleExternalIds = new ArrayList<>();
             private String projectName;
             private boolean createRole;
 
@@ -198,7 +218,7 @@ public class CiUserStack extends TaggedStack {
              * Set the project name.
              *
              * @param projectName project name
-             * @return self for fluent programming
+             * @return this instance to support fluent method chaining
              */
             public Builder projectName(final String projectName) {
                 this.projectName = projectName;
@@ -209,7 +229,7 @@ public class CiUserStack extends TaggedStack {
              * Set whether to create a role in the stack.
              *
              * @param createRole true to create a role, false (default) otherwise
-             * @return self for fluent programming
+             * @return this instance to support fluent method chaining
              */
             public Builder createRole(final boolean createRole) {
                 this.createRole = createRole;
@@ -220,7 +240,7 @@ public class CiUserStack extends TaggedStack {
              * Add permissions to the CI user.
              *
              * @param requiredPermissions AWS permissions
-             * @return self for fluent programming
+             * @return this instance to support fluent method chaining
              */
             public Builder addRequiredPermissions(final PolicyDocument... requiredPermissions) {
                 this.requiredPermissions.addAll(Arrays.asList(requiredPermissions));
@@ -232,10 +252,22 @@ public class CiUserStack extends TaggedStack {
              * Should only be used if {@code createRole} is set to true.
              *
              * @param roleRequiredPermissions AWS permissions
-             * @return self for fluent programming
+             * @return this instance to support fluent method chaining
              */
             public Builder addRoleRequiredPermissions(final PolicyDocument... roleRequiredPermissions) {
                 this.roleRequiredPermissions.addAll(Arrays.asList(roleRequiredPermissions));
+                return this;
+            }
+
+            /**
+             * Add IDs that must be used to assume the CI Role.
+             * Should only be used if {@code createRole} is set to true.
+             *
+             * @param externalIds IDs
+             * @return this instance to support fluent method chaining
+             */
+            public Builder addRoleExternalId(final String... externalIds) {
+                this.roleExternalIds.addAll(Arrays.asList(externalIds));
                 return this;
             }
 
