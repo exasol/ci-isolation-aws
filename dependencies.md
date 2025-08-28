@@ -45,13 +45,13 @@
 | [Apache Maven GPG Plugin][34]                           | [Apache-2.0][4]                             |
 | [Apache Maven Source Plugin][35]                        | [Apache License, Version 2.0][4]            |
 | [Apache Maven Javadoc Plugin][36]                       | [Apache-2.0][4]                             |
-| [Nexus Staging Maven Plugin][37]                        | [Eclipse Public License][38]                |
-| [JaCoCo :: Maven Plugin][39]                            | [EPL-2.0][40]                               |
-| [Quality Summarizer Maven Plugin][41]                   | [MIT License][42]                           |
-| [error-code-crawler-maven-plugin][43]                   | [MIT License][44]                           |
-| [Git Commit Id Maven Plugin][45]                        | [GNU Lesser General Public License 3.0][46] |
-| [Exec Maven Plugin][47]                                 | [Apache License 2][4]                       |
-| [Project Keeper Maven plugin][48]                       | [The MIT License][49]                       |
+| [Central Publishing Maven Plugin][37]                   | [The Apache License, Version 2.0][4]        |
+| [JaCoCo :: Maven Plugin][38]                            | [EPL-2.0][39]                               |
+| [Quality Summarizer Maven Plugin][40]                   | [MIT License][41]                           |
+| [error-code-crawler-maven-plugin][42]                   | [MIT License][43]                           |
+| [Git Commit Id Maven Plugin][44]                        | [GNU Lesser General Public License 3.0][45] |
+| [Exec Maven Plugin][46]                                 | [Apache License 2][4]                       |
+| [Project Keeper Maven plugin][47]                       | [The MIT License][48]                       |
 
 [0]: https://github.com/aws/aws-cdk
 [1]: https://www.apache.org/licenses/LICENSE-2.0
@@ -74,7 +74,7 @@
 [18]: https://maven.apache.org/plugins/maven-install-plugin/
 [19]: https://maven.apache.org/plugins/maven-resources-plugin/
 [20]: https://maven.apache.org/plugins/maven-site-plugin/
-[21]: http://docs.sonarqube.org/display/PLUG/Plugin+Library/sonar-maven-plugin
+[21]: http://docs.sonarqube.org/display/PLUG/Plugin+Library/sonar-scanner-maven/sonar-maven-plugin
 [22]: http://www.gnu.org/licenses/lgpl.txt
 [23]: https://maven.apache.org/plugins/maven-toolchains-plugin/
 [24]: https://maven.apache.org/plugins/maven-compiler-plugin/
@@ -90,16 +90,15 @@
 [34]: https://maven.apache.org/plugins/maven-gpg-plugin/
 [35]: https://maven.apache.org/plugins/maven-source-plugin/
 [36]: https://maven.apache.org/plugins/maven-javadoc-plugin/
-[37]: http://www.sonatype.com/public-parent/nexus-maven-plugins/nexus-staging/nexus-staging-maven-plugin/
-[38]: http://www.eclipse.org/legal/epl-v10.html
-[39]: https://www.jacoco.org/jacoco/trunk/doc/maven.html
-[40]: https://www.eclipse.org/legal/epl-2.0/
-[41]: https://github.com/exasol/quality-summarizer-maven-plugin/
-[42]: https://github.com/exasol/quality-summarizer-maven-plugin/blob/main/LICENSE
-[43]: https://github.com/exasol/error-code-crawler-maven-plugin/
-[44]: https://github.com/exasol/error-code-crawler-maven-plugin/blob/main/LICENSE
-[45]: https://github.com/git-commit-id/git-commit-id-maven-plugin
-[46]: http://www.gnu.org/licenses/lgpl-3.0.txt
-[47]: https://www.mojohaus.org/exec-maven-plugin
-[48]: https://github.com/exasol/project-keeper/
-[49]: https://github.com/exasol/project-keeper/blob/main/LICENSE
+[37]: https://central.sonatype.org
+[38]: https://www.jacoco.org/jacoco/trunk/doc/maven.html
+[39]: https://www.eclipse.org/legal/epl-2.0/
+[40]: https://github.com/exasol/quality-summarizer-maven-plugin/
+[41]: https://github.com/exasol/quality-summarizer-maven-plugin/blob/main/LICENSE
+[42]: https://github.com/exasol/error-code-crawler-maven-plugin/
+[43]: https://github.com/exasol/error-code-crawler-maven-plugin/blob/main/LICENSE
+[44]: https://github.com/git-commit-id/git-commit-id-maven-plugin
+[45]: http://www.gnu.org/licenses/lgpl-3.0.txt
+[46]: https://www.mojohaus.org/exec-maven-plugin
+[47]: https://github.com/exasol/project-keeper/
+[48]: https://github.com/exasol/project-keeper/blob/main/LICENSE
