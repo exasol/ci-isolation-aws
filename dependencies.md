@@ -62,7 +62,7 @@
 [6]: https://github.com/exasol/error-reporting-java/blob/main/LICENSE
 [7]: https://bitbucket.org/snakeyaml/snakeyaml
 [8]: http://www.apache.org/licenses/LICENSE-2.0.txt
-[9]: https://junit.org/junit5/
+[9]: https://junit.org/
 [10]: https://www.eclipse.org/legal/epl-v20.html
 [11]: http://hamcrest.org/JavaHamcrest/
 [12]: https://raw.githubusercontent.com/hamcrest/JavaHamcrest/master/LICENSE
