@@ -21,14 +21,14 @@ Netty is an asynchronous event-driven network application framework for developm
 
 ### Compile Dependency Updates
 
-* Updated `com.google.code.gson:gson:2.12.1` to `2.13.1`
+* Updated `com.google.code.gson:gson:2.12.1` to `2.13.2`
 * Updated `org.yaml:snakeyaml:2.4` to `2.5`
-* Updated `software.amazon.awscdk:aws-cdk-lib:2.189.0` to `2.214.0`
+* Updated `software.amazon.awscdk:aws-cdk-lib:2.189.0` to `2.215.0`
 
 ### Test Dependency Updates
 
 * Updated `org.junit.jupiter:junit-jupiter-api:5.12.1` to `5.13.4`
-* Updated `software.amazon.awssdk:cloudformation:2.31.20` to `2.33.4`
-* Updated `software.amazon.awssdk:codebuild:2.31.20` to `2.33.4`
-* Updated `software.amazon.awssdk:iam:2.31.20` to `2.33.4`
-* Updated `software.amazon.awssdk:sts:2.31.20` to `2.33.4`
+* Updated `software.amazon.awssdk:cloudformation:2.31.20` to `2.34.0`
+* Updated `software.amazon.awssdk:codebuild:2.31.20` to `2.34.0`
+* Updated `software.amazon.awssdk:iam:2.31.20` to `2.34.0`
+* Updated `software.amazon.awssdk:sts:2.31.20` to `2.34.0`
