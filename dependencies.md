@@ -35,7 +35,7 @@
 | [Apache Maven Toolchains Plugin][23]                    | [Apache-2.0][4]                             |
 | [Apache Maven Compiler Plugin][24]                      | [Apache-2.0][4]                             |
 | [Apache Maven Enforcer Plugin][25]                      | [Apache-2.0][4]                             |
-| [Maven Flatten Plugin][26]                              | [Apache Software Licenese][4]               |
+| [Maven Flatten Plugin][26]                              | [Apache Software License][4]                |
 | [org.sonatype.ossindex.maven:ossindex-maven-plugin][27] | [ASL2][8]                                   |
 | [Maven Surefire Plugin][28]                             | [Apache-2.0][4]                             |
 | [Versions Maven Plugin][29]                             | [Apache License, Version 2.0][4]            |
@@ -43,7 +43,7 @@
 | [Apache Maven Artifact Plugin][32]                      | [Apache-2.0][4]                             |
 | [Apache Maven Deploy Plugin][33]                        | [Apache-2.0][4]                             |
 | [Apache Maven GPG Plugin][34]                           | [Apache-2.0][4]                             |
-| [Apache Maven Source Plugin][35]                        | [Apache License, Version 2.0][4]            |
+| [Apache Maven Source Plugin][35]                        | [Apache-2.0][4]                             |
 | [Apache Maven Javadoc Plugin][36]                       | [Apache-2.0][4]                             |
 | [Central Publishing Maven Plugin][37]                   | [The Apache License, Version 2.0][4]        |
 | [JaCoCo :: Maven Plugin][38]                            | [EPL-2.0][39]                               |
@@ -74,7 +74,7 @@
 [18]: https://maven.apache.org/plugins/maven-install-plugin/
 [19]: https://maven.apache.org/plugins/maven-resources-plugin/
 [20]: https://maven.apache.org/plugins/maven-site-plugin/
-[21]: http://docs.sonarqube.org/display/PLUG/Plugin+Library/sonar-scanner-maven/sonar-maven-plugin
+[21]: https://docs.sonarsource.com/sonarqube-server/latest/extension-guide/developing-a-plugin/plugin-basics/sonar-scanner-maven/sonar-maven-plugin/
 [22]: http://www.gnu.org/licenses/lgpl.txt
 [23]: https://maven.apache.org/plugins/maven-toolchains-plugin/
 [24]: https://maven.apache.org/plugins/maven-compiler-plugin/
