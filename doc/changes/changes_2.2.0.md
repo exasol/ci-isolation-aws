@@ -1,12 +1,14 @@
 # CI Isolation AWS 2.2.0, released 2026-??-??
 
-Code name:
+Code name: Keep AWS GuardDuty resources
 
 ## Summary
 
+The cleanup script no longer tries to delete AWS GuardDuty resources. These resources are required for securty reasons and must not be deleted.
+
 ## Features
 
-* ISSUE_NUMBER: description
+* #53: Keep AWS GuardDuty resources
 
 ## Dependency Updates
 
