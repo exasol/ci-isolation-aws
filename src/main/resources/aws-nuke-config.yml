@@ -49,6 +49,9 @@ accounts:
       CodeBuildProject:
         - type: "glob"
           value: "protected-*"
+      CodeBuildBuild:
+        - type: "glob"
+          value: "protected-*"
       CloudWatchLogsLogGroup:
         - "/aws/codebuild/protected-aws-account-cleanup-runner"
       CloudFormationStack:
@@ -75,6 +78,9 @@ accounts:
       ECRRepository:
         - type: "glob"
           value: "Repository: cdk-*-container-assets-*"
+      GuardDutyDetector:
+        - type: "glob"
+          value: "*"
     resource-types:
       excludes:
         - S3Object

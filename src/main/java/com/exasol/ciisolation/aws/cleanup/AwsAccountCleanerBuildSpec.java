@@ -23,9 +23,9 @@ class AwsAccountCleanerBuildSpec extends BuildSpec {
      */
     AwsAccountCleanerBuildSpec(final String accountId) {
         this.accountId = accountId;
-        this.buildSpec = new BuildSpecBuilder()//
+        this.buildSpec = new BuildSpecBuilder()
                 .addInstallSteps(getInstallSteps())
-                .addInstallSteps("aws-nuke run --config " + AWS_NUKE_CONFIG + " --force --force-sleep 3")// --no-dry-run
+                .addInstallSteps("aws-nuke run --config " + AWS_NUKE_CONFIG + " --force --force-sleep 3 --no-dry-run")
                 .build();
     }
 
