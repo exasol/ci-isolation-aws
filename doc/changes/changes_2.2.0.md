@@ -1,4 +1,4 @@
-# CI Isolation AWS 2.2.0, released 2026-??-??
+# CI Isolation AWS 2.2.0, released 2026-03-13
 
 Code name: Keep AWS GuardDuty resources
 
