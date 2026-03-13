@@ -51,7 +51,7 @@ class AwsAccountCleanerBuildSpec extends BuildSpec {
     }
 
     private String getAwsNukeConfig() {
-        return new StringResourceReader().readResourceAsString(AWS_NUKE_CONFIG).replace("ACCOUNT_ID", this.accountId);
+        return new StringResourceReader().readResourceAsString(AWS_NUKE_CONFIG).replace("$ACCOUNT_ID$", this.accountId);
     }
 
     @Override

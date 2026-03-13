@@ -8,7 +8,7 @@ account-blocklist:
   - "123456789123"
 
 accounts:
-  "ACCOUNT_ID":
+  "$ACCOUNT_ID$":
     filters:
       IAMUser:
         - type: "glob"
