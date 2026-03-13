@@ -25,7 +25,7 @@ class AwsAccountCleanerBuildSpec extends BuildSpec {
         this.accountId = accountId;
         this.buildSpec = new BuildSpecBuilder()//
                 .addInstallSteps(getInstallSteps())
-                .addInstallSteps("aws-nuke --config " + AWS_NUKE_CONFIG + " --force --force-sleep 3 --no-dry-run")//
+                .addInstallSteps("aws-nuke run --config " + AWS_NUKE_CONFIG + " --force --force-sleep 3")// --no-dry-run
                 .build();
     }
 
@@ -33,11 +33,11 @@ class AwsAccountCleanerBuildSpec extends BuildSpec {
     private String[] getInstallSteps() {
         return new String[] { getWriteToFileCommand(getAwsNukeConfig(), AWS_NUKE_CONFIG), //
                 "cat aws-nuke-config.yml", //
-                "export version=2.21.2", //
-                "wget --quiet https://github.com/rebuy-de/aws-nuke/releases/download/v${version}/aws-nuke-v${version}-linux-amd64.tar.gz --output-document=aws-nuke.tar.gz", //
-                "echo \"1a2ba281d5baac1119b40da3a4b08de28221d0ce55a92169aa99f2b86ff991c2  aws-nuke.tar.gz\" | shasum --check --algorithm 256 --binary",
+                "export version=3.64.0", //
+                "wget --quiet https://github.com/ekristen/aws-nuke/releases/download/v${version}/aws-nuke-v${version}-linux-amd64.tar.gz --output-document=aws-nuke.tar.gz", //
+                "echo \"cc712ab3d1836e38a6594f6b96c764a6b44b8aab49728c70d626fd8a64767b95  aws-nuke.tar.gz\" | shasum --check --algorithm 256 --binary",
                 "tar -xvzf aws-nuke.tar.gz", //
-                "mv aws-nuke-v${version}-linux-amd64 /bin/aws-nuke", //
+                "mv aws-nuke /bin/aws-nuke", //
                 "chmod +x /bin/aws-nuke" };
     }
 
