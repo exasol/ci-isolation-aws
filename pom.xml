@@ -5,14 +5,22 @@
     <artifactId>ci-isolation-aws</artifactId>
     <name>CI Isolation AWS</name>
     <description>Setup for provisioning an AWS sub-account for Continuous Integration (CI) testing.</description>
-    <version>2.2.0</version>
+    <version>2.2.1</version>
     <url>https://github.com/exasol/ci-isolation-aws/</url>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>software.amazon.awssdk</groupId>
                 <artifactId>bom</artifactId>
-                <version>2.42.10</version>
+                <version>2.42.24</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <!-- Fix CVE-2026-33870 & CVE-2026-33871 -->
+                <groupId>io.netty</groupId>
+                <artifactId>netty-bom</artifactId>
+                <version>4.2.12.Final</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -23,12 +31,12 @@
         <dependency>
             <groupId>software.amazon.awscdk</groupId>
             <artifactId>aws-cdk-lib</artifactId>
-            <version>2.242.0</version>
+            <version>2.245.0</version>
         </dependency>
         <dependency>
             <groupId>software.constructs</groupId>
             <artifactId>constructs</artifactId>
-            <version>10.5.1</version>
+            <version>10.6.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -114,7 +122,7 @@
     <parent>
         <artifactId>ci-isolation-aws-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>2.2.0</version>
+        <version>2.2.1</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
 </project>
