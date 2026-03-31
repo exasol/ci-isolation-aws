@@ -58,7 +58,7 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <!-- JUnit 6 requires Java 17 -->
-            <version>5.13.3</version>
+            <version>5.13.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>

@@ -44,7 +44,6 @@ io.netty:netty-codec-http2 - Allocation of Resources Without Limits or Throttlin
 
 ### Test Dependency Updates
 
-* Updated `org.junit.jupiter:junit-jupiter-api:5.13.4` to `5.13.3`
 * Updated `software.amazon.awssdk:cloudformation:2.42.10` to `2.42.24`
 * Updated `software.amazon.awssdk:codebuild:2.42.10` to `2.42.24`
 * Updated `software.amazon.awssdk:iam:2.42.10` to `2.42.24`
