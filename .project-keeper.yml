@@ -3,4 +3,4 @@ sources:
     path: pom.xml
     modules:
       - maven_central
-      - integration_tests
+      # Integration tests deactivated in CI by intention, see README.md
