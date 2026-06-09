@@ -65,9 +65,13 @@ class PermissionBoundaryIT {
 
     @AfterAll
     static void afterAll() {
-        iamAdmin.deleteAccessKey(DeleteAccessKeyRequest.builder().userName(ciUserName)
-                .accessKeyId(ciUserAccessKey.accessKeyId()).build());
-        deployment.close();
+        if (iamAdmin != null) {
+            iamAdmin.deleteAccessKey(DeleteAccessKeyRequest.builder().userName(ciUserName)
+                    .accessKeyId(ciUserAccessKey.accessKeyId()).build());
+        }
+        if (deployment != null) {
+            deployment.close();
+        }
     }
 
     @Test
