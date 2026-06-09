@@ -33,6 +33,7 @@ This release fixes 10 vulnerabilities in Netty test dependencies.
 * Updated `software.amazon.awssdk:cloudformation:2.42.24` to `2.46.6`
 * Updated `software.amazon.awssdk:codebuild:2.42.24` to `2.46.6`
 * Updated `software.amazon.awssdk:iam:2.42.24` to `2.46.6`
+* Added `software.amazon.awssdk:signin:2.46.6`
 * Updated `software.amazon.awssdk:sts:2.42.24` to `2.46.6`
 
 ### Plugin Dependency Updates

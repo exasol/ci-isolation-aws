@@ -21,6 +21,7 @@
 | [AWS Java SDK :: Services :: AWS STS][13]            | [Apache License, Version 2.0][14] |
 | [AWS Java SDK :: Services :: AWS CloudFormation][13] | [Apache License, Version 2.0][14] |
 | [AWS Java SDK :: Services :: AWS Code Build][13]     | [Apache License, Version 2.0][14] |
+| [AWS Java SDK :: Services :: Signin][13]             | [Apache License, Version 2.0][14] |
 | [SLF4J JDK14 Provider][15]                           | [MIT][16]                         |
 
 ## Plugin Dependencies

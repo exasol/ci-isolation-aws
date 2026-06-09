@@ -88,6 +88,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <!-- To use login_session property in the 'default' profile, the 'signin' service module must be on the class path -->
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>signin</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <!-- Enable log output for integration tests -->
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-jdk14</artifactId>
