@@ -6,6 +6,8 @@ import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.logging.Logger;
+
 import org.junit.jupiter.api.*;
 
 import com.exasol.ciisolation.aws.ciuser.CiUserStack;
@@ -27,6 +29,7 @@ import software.amazon.awssdk.services.sts.StsClient;
  * </p>
  */
 class PermissionBoundaryIT {
+    private static final Logger LOGGER = Logger.getLogger(PermissionBoundaryIT.class.getName());
     private static CdkRunner.StackDeployment deployment;
     private static StaticCredentialsProvider ciUserCredentialsProvider;
     private static IamClient iamAdmin;
@@ -52,22 +55,31 @@ class PermissionBoundaryIT {
                 .create(AwsBasicCredentials.create(ciUserAccessKey.accessKeyId(), ciUserAccessKey.secretAccessKey()));
         iamCiUser = IamClient.builder().region(Region.AWS_GLOBAL).credentialsProvider(ciUserCredentialsProvider)
                 .build();
-        Thread.sleep(20 * 1000);// wait 20s for AWS to sync (it's an eventual consistent system...)
+        waitForAwsSync();
+    }
+
+    @SuppressWarnings("java:S2925") // Wait for AWS to sync the new permissions
+    private static void waitForAwsSync() throws InterruptedException {
+        LOGGER.info("Waiting for AWS to sync the new permissions...");
+        Thread.sleep(20 * 1000);
     }
 
     private static String getCiUserName() {
         final String ciUserName = deployment.getOutputs().get(CiUserStack.OUTPUT_CI_USER_NAME);
         if (ciUserName == null) {
-            throw new IllegalStateException("Failed to get ci username from outputs.");
+            throw new IllegalStateException(
+                    "Failed to get '" + CiUserStack.OUTPUT_CI_USER_NAME + "' from outputs. Available outputs: " + deployment.getOutputs());
         }
         return ciUserName;
     }
 
     @AfterAll
     static void afterAll() {
-        if (iamAdmin != null) {
-            iamAdmin.deleteAccessKey(DeleteAccessKeyRequest.builder().userName(ciUserName)
-                    .accessKeyId(ciUserAccessKey.accessKeyId()).build());
+        if (iamAdmin != null && ciUserAccessKey != null) {
+            iamAdmin.deleteAccessKey(DeleteAccessKeyRequest.builder()
+                    .userName(ciUserName)
+                    .accessKeyId(ciUserAccessKey.accessKeyId())
+                    .build());
         }
         if (deployment != null) {
             deployment.close();
