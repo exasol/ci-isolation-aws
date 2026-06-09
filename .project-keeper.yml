@@ -3,5 +3,4 @@ sources:
     path: pom.xml
     modules:
       - maven_central
-linkReplacements:
-  - "https://github.com/google/gson/gson|https://github.com/google/gson"
+      # Integration tests deactivated in CI by intention, see README.md

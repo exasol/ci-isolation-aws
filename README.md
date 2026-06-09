@@ -108,6 +108,22 @@ profile: <the aws-profile for the admin user>
 
 Before running the tests, deploy the stack using the CDK.
 
+### Troubleshooting
+
+#### Unable To Fetch Parameters
+
+When integration tests fail with the following error message:
+
+```
+CloudFormationException: Unable to fetch parameters [/cdk-bootstrap/abc123def/version] from parameter store for this account. 
+```
+
+Then run
+
+```sh
+cdk bootstrap
+```
+
 ## Additional Information
 
 * [Dependencies](dependencies.md)
