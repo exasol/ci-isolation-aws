@@ -4,7 +4,9 @@ Code name: Fixed vulnerabilities CVE-2026-55831, CVE-2026-55833, CVE-2026-56745,
 
 ## Summary
 
-**Breaking Change:** This release requires Java 17.
+**Breaking Changes:**
+* This release requires Java 17.
+* The constructor `new DefaultCiUserStackProps.Builder()` is now private. Use `DefaultCiUserStackProps.builder()` to create a new builder.
 
 This release fixes the following 14 vulnerabilities:
 
