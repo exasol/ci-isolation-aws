@@ -8,9 +8,14 @@ import software.amazon.awscdk.App;
  * Entry point class of the CDK app.
  */
 public class AccountCleanupApp {
+
+    private AccountCleanupApp() {
+        // intentionally left empty
+    }
+
     /**
      * Entry point of the CDK app.
-     * 
+     *
      * @param args arguments
      */
     public static void main(final String[] args) {

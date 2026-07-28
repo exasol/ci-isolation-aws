@@ -10,8 +10,15 @@ import software.amazon.awscdk.services.iam.PolicyDocument;
  */
 public class PolicyReader {
     /**
+     * Creates a new instance of {@link PolicyReader}.
+     */
+    public PolicyReader() {
+        // intentionally left empty
+    }
+
+    /**
      * Read a policy document from file in the resources.
-     * 
+     *
      * @param resourceName name of the resource
      * @return read policy document
      */

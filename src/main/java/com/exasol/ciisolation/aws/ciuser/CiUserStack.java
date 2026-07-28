@@ -25,9 +25,11 @@ public class CiUserStack extends TaggedStack {
 
     /**
      * Creates a new stack for the CI user.
+     *
      * @param scope the scope
      * @param props the properties
      */
+    @SuppressWarnings("this-escape") // Required by CDK API
     public CiUserStack(final Construct scope, final CiUserStackProps props) {
         super(scope, PROTECTED + props.projectName() + "-ci-setup", null, props.projectName());
         defineResources(props);
@@ -179,6 +181,15 @@ public class CiUserStack extends TaggedStack {
             }
         }
 
+        /**
+         * Create a builder for {@link DefaultCiUserStackProps}.
+         * 
+         * @return builder
+         */
+        public static Builder builder() {
+            return new Builder();
+        }
+
         @Override
         public boolean createRole() {
             return createRole;
@@ -213,6 +224,10 @@ public class CiUserStack extends TaggedStack {
             private final List<String> roleExternalIds = new ArrayList<>();
             private String projectName;
             private boolean createRole;
+
+            private Builder() {
+                // intentionally left empty
+            }
 
             /**
              * Set the project name.

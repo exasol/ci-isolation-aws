@@ -29,9 +29,10 @@ public class AccountCleanupStack extends TaggedStack {
 
     /**
      * Create a new instance of {@link AccountCleanupStack}.
-     * 
+     *
      * @param scope parent
      */
+    @SuppressWarnings("this-escape") // Required by CDK API
     public AccountCleanupStack(final Construct scope) {
         super(scope, CLEANUP_STACK_NAME, null, "ci-account-cleanup");
         defineResources();
