@@ -25,7 +25,7 @@ public class CiUserStack extends TaggedStack {
 
     /**
      * Creates a new stack for the CI user.
-     * 
+     *
      * @param scope the scope
      * @param props the properties
      */
@@ -181,6 +181,15 @@ public class CiUserStack extends TaggedStack {
             }
         }
 
+        /**
+         * Create a builder for {@link DefaultCiUserStackProps}.
+         * 
+         * @return builder
+         */
+        public static Builder builder() {
+            return new Builder();
+        }
+
         @Override
         public boolean createRole() {
             return createRole;
@@ -215,6 +224,10 @@ public class CiUserStack extends TaggedStack {
             private final List<String> roleExternalIds = new ArrayList<>();
             private String projectName;
             private boolean createRole;
+
+            private Builder() {
+                // intentionally left empty
+            }
 
             /**
              * Set the project name.
