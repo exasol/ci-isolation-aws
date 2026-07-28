@@ -25,9 +25,11 @@ public class CiUserStack extends TaggedStack {
 
     /**
      * Creates a new stack for the CI user.
+     * 
      * @param scope the scope
      * @param props the properties
      */
+    @SuppressWarnings("this-escape") // Required by CDK API
     public CiUserStack(final Construct scope, final CiUserStackProps props) {
         super(scope, PROTECTED + props.projectName() + "-ci-setup", null, props.projectName());
         defineResources(props);

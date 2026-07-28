@@ -13,12 +13,13 @@ public class TaggedStack extends Stack {
 
     /**
      * Create a new instance of {@link TaggedStack}.
-     * 
+     *
      * @param scope       CDK scope
      * @param id          CDK id
      * @param props       CDK stack properties
      * @param projectName name of the project (used as exa:project tag)
      */
+    @SuppressWarnings("this-escape") // Required by CDK API
     public TaggedStack(final Construct scope, final String id, final StackProps props, final String projectName) {
         super(scope, id, props);
         this.projectName = projectName;
@@ -28,7 +29,7 @@ public class TaggedStack extends Stack {
 
     /**
      * Get the owner of this stack (configurable via parameter).
-     * 
+     *
      * @return owner
      */
     protected String getOwner() {
@@ -37,7 +38,7 @@ public class TaggedStack extends Stack {
 
     /**
      * Tag a CDK resource.
-     * 
+     *
      * @param resource resource to tag
      */
     protected void tagResource(final IConstruct resource) {
