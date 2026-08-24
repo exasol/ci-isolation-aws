@@ -1,4 +1,4 @@
-# CI Isolation AWS 3.0.1, released 2026-??-??
+# CI Isolation AWS 3.0.1, released 2026-08-24
 
 Code name: Fixed vulnerability CVE-2026-75596 in io.netty:netty-handler:jar:4.2.16.Final:test
 
