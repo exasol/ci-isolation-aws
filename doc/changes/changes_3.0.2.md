@@ -6,27 +6,6 @@ Code name: Fix 20 vulnerabilities in Jackson and Netty dependencies
 
 This release fixes 20 reported vulnerabilities in Jackson compile and Netty test dependencies.
 
-- Fixes #97
-- Fixes #98
-- Fixes #100
-- Fixes #101
-- Fixes #102
-- Fixes #104
-- Fixes #105
-- Fixes #106
-- Fixes #107
-- Fixes #108
-- Fixes #109
-- Fixes #113
-- Fixes #114
-- Fixes #115
-- Fixes #116
-- Fixes #117
-- Fixes #118
-- Fixes #119
-- Fixes #120
-- Fixes #122
-
 ## Security
 
 * #122: Fixed CVE-2026-110879 (unsafe deserialization, CWE-502, 9.2) in `com.fasterxml.jackson.core:jackson-databind:jar:2.22.2:compile`
