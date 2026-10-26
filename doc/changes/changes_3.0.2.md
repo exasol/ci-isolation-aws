@@ -52,6 +52,21 @@ This release fixes 20 reported vulnerabilities in Jackson compile and Netty test
 
 ## Dependency Updates
 
+### Compile Dependency Updates
+
+* Updated `com.google.code.gson:gson:2.14.0` to `2.15.0`
+* Updated `org.yaml:snakeyaml:2.6` to `2.7`
+* Updated `software.amazon.awscdk:aws-cdk-lib:2.266.0` to `2.274.0`
+
+### Test Dependency Updates
+
+* Updated `org.slf4j:slf4j-jdk14:2.0.18` to `2.0.20`
+* Updated `software.amazon.awssdk:cloudformation:2.54.2` to `2.57.3`
+* Updated `software.amazon.awssdk:codebuild:2.54.2` to `2.57.3`
+* Updated `software.amazon.awssdk:iam:2.54.2` to `2.57.3`
+* Updated `software.amazon.awssdk:signin:2.54.2` to `2.57.3`
+* Updated `software.amazon.awssdk:sts:2.54.2` to `2.57.3`
+
 ### Plugin Dependency Updates
 
 * Updated `com.exasol:error-code-crawler-maven-plugin:2.1.0` to `2.1.2`
@@ -64,6 +79,7 @@ This release fixes 20 reported vulnerabilities in Jackson compile and Netty test
 * Updated `org.apache.maven.plugins:maven-surefire-plugin:3.5.6` to `3.6.0`
 * Updated `org.apache.maven.plugins:maven-toolchains-plugin:3.2.0` to `3.3.0`
 * Updated `org.codehaus.mojo:build-helper-maven-plugin:3.6.1` to `3.6.2`
+* Updated `org.codehaus.mojo:exec-maven-plugin:3.6.3` to `3.6.4`
 * Updated `org.codehaus.mojo:flatten-maven-plugin:1.7.3` to `1.8.0`
 * Updated `org.codehaus.mojo:versions-maven-plugin:2.21.0` to `2.23.0`
 * Updated `org.sonarsource.scanner.maven:sonar-maven-plugin:5.7.0.6970` to `5.8.0.7211`
