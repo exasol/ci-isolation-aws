@@ -2,8 +2,6 @@ package com.exasol.ciisolation.aws.ciuser;
 
 import java.util.*;
 
-import org.jetbrains.annotations.NotNull;
-
 import com.exasol.ciisolation.aws.TaggedStack;
 import com.exasol.ciisolation.aws.cleanup.AccountCleanupStack;
 
@@ -56,14 +54,14 @@ public class CiUserStack extends TaggedStack {
         tagResource(identity);
     }
 
-    private @NotNull User defineUser(final CiUserStackProps props) {
+    private User defineUser(final CiUserStackProps props) {
         final String ciUserName = PROTECTED + props.projectName() + "-ci-user";
         final User ciUser = new User(this, ciUserName, UserProps.builder().userName(ciUserName).build());
         setupManagedPolicies(ciUser, ciUserName, props.requiredPermissions());
         return ciUser;
     }
 
-    private @NotNull Role defineRole(final CiUserStackProps props, final User ciUser) {
+    private Role defineRole(final CiUserStackProps props, final User ciUser) {
         final String ciRoleName = PROTECTED + props.projectName() + "-ci-role";
         final RoleProps roleProps = RoleProps.builder()
                 .roleName(ciRoleName)
@@ -80,7 +78,6 @@ public class CiUserStack extends TaggedStack {
         addPolicies(identity, policies);
     }
 
-    @NotNull
     private List<ManagedPolicy> createPolicies(final String resourceName, final List<PolicyDocument> requiredPermissions) {
         final List<ManagedPolicy> policies = new ArrayList<>();
         int counter = 1;
@@ -99,7 +96,6 @@ public class CiUserStack extends TaggedStack {
         }
     }
 
-    @NotNull
     private ManagedPolicy createManagedPolicy(final PolicyDocument policyDocument, final String name) {
         final ManagedPolicy managedPolicy = new ManagedPolicy(this, name,
                 ManagedPolicyProps.builder().document(policyDocument).managedPolicyName(name).build());
@@ -183,7 +179,7 @@ public class CiUserStack extends TaggedStack {
 
         /**
          * Create a builder for {@link DefaultCiUserStackProps}.
-         * 
+         *
          * @return builder
          */
         public static Builder builder() {

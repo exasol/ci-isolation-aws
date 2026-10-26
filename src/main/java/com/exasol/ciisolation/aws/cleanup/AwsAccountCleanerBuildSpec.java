@@ -1,8 +1,5 @@
 package com.exasol.ciisolation.aws.cleanup;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import com.exasol.errorreporting.ExaError;
 
 import software.amazon.awscdk.services.codebuild.BuildSpec;
@@ -18,7 +15,7 @@ class AwsAccountCleanerBuildSpec extends BuildSpec {
 
     /**
      * Create a new instance of {@link AwsAccountCleanerBuildSpec}.
-     * 
+     *
      * @param accountId aws account id
      */
     AwsAccountCleanerBuildSpec(final String accountId) {
@@ -29,7 +26,6 @@ class AwsAccountCleanerBuildSpec extends BuildSpec {
                 .build();
     }
 
-    @NotNull
     private String[] getInstallSteps() {
         return new String[] { getWriteToFileCommand(getAwsNukeConfig(), AWS_NUKE_CONFIG), //
                 "cat aws-nuke-config.yml", //
@@ -55,17 +51,17 @@ class AwsAccountCleanerBuildSpec extends BuildSpec {
     }
 
     @Override
-    public @NotNull String toBuildSpec() {
+    public String toBuildSpec() {
         return this.buildSpec;
     }
 
     @Override
-    public @NotNull String toBuildSpec(@Nullable final Construct scope) {
+    public String toBuildSpec(final Construct scope) {
         return this.toBuildSpec();
     }
 
     @Override
-    public @NotNull Boolean getIsImmediate() {
+    public Boolean getIsImmediate() {
         return true;
     }
 }
