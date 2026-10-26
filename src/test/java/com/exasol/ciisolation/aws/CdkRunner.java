@@ -6,8 +6,6 @@ import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import org.jetbrains.annotations.NotNull;
-
 import com.exasol.errorreporting.ExaError;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -79,7 +77,6 @@ public class CdkRunner {
         }
     }
 
-    @NotNull
     private Optional<software.amazon.awssdk.services.cloudformation.model.Stack> describeStack(final String stackName) {
         try {
             return this.cloudFormation.describeStacks(DescribeStacksRequest.builder().stackName(stackName).build())
